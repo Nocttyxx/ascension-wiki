@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "ASCENSION_GitHub_Pages_READY (1)/site/**"
+      - "ASCENSION_Wiki_V2_UPDATE_ONLY/**"
       - ".github/workflows/main.yml"
   workflow_dispatch:
 
@@ -36,7 +36,7 @@ jobs:
       - name: Préparer le wiki
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "./ASCENSION_GitHub_Pages_READY (1)/site"
+          path: "./ASCENSION_Wiki_V2_UPDATE_ONLY"
 
       - name: Publier le wiki
         id: deployment
