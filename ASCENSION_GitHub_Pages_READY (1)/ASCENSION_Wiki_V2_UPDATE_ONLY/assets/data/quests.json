@@ -1,0 +1,2942 @@
+[
+  {
+    "file": "prologue.snbt",
+    "title": "I — Les survivants",
+    "subtitle": "Le retour du Voile et la naissance d'une compagnie",
+    "quests": [
+      {
+        "id": "1000000000000001",
+        "title": "Le dernier survivant",
+        "description": [
+          "La guerre du Roi Vaelorn s'est achevée il y a des siècles.",
+          "Pourtant, cette nuit, les étoiles ont disparu et les morts ont recommencé à marcher.",
+          "",
+          "Tu n'es pas un élu. Tu es simplement l'un de ceux qui ont refusé de mourir.",
+          "Rassemble ton courage : le monde se souvient des anciennes fautes."
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Nous sommes prêts",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:bread",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "50",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "1000000000000002",
+        "title": "Former la compagnie",
+        "description": [
+          "Les anciens textes parlent de six armes forgées par les Dieux.",
+          "Ils taisent presque toujours l'existence du septième Miracle.",
+          "",
+          "Le septième n'a ni lame, ni manche, ni porteur unique.",
+          "Il naît lorsque plusieurs survivants choisissent de tenir ensemble.",
+          "",
+          "Forme ta compagnie. Cette décision aura plus de poids que n'importe quelle armure."
+        ],
+        "optional": false,
+        "dependencies": [
+          "1000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Toute l'équipe est réunie",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:torch",
+            "xp": null,
+            "count": "16"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "50",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "1000000000000003",
+        "title": "Une lame digne de ce nom",
+        "description": [
+          "Les armes ordinaires cassent. Les Miracles, eux, se souviennent.",
+          "Chaque parade, chaque esquive et chaque coup maîtrisé prépare ton corps à leur présence.",
+          "",
+          "Apprends Epic Fight avant de défier les gardiens de l'ancien monde.",
+          "Une arme puissante dans des mains imprudentes ne crée qu'un cadavre mieux équipé."
+        ],
+        "optional": false,
+        "dependencies": [
+          "1000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:iron_sword",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:cooked_beef",
+            "xp": null,
+            "count": "8"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "1000000000000004",
+        "title": "Ne pas mourir au premier coup",
+        "description": [
+          "Les quatre ordres survivants ne portaient pas la même armure.",
+          "Le Bastion encaissait, les Cendres avançaient, la Voie sans Étoile esquivait",
+          "et les Lanternes revenaient toujours avec ce que les autres avaient oublié.",
+          "",
+          "Équipe-toi pour survivre, pas seulement pour paraître invincible."
+        ],
+        "optional": false,
+        "dependencies": [
+          "1000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:shield",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:iron_ingot",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "1000000000000005",
+        "title": "La première nuit",
+        "description": [
+          "La première nuit est un test très ancien.",
+          "Lorsque le soleil disparaît, quelque chose derrière le Voile écoute les vivants.",
+          "",
+          "Si le ciel devient rouge, ne regarde pas la lune trop longtemps.",
+          "Au matin, note les noms de ceux qui sont encore là."
+        ],
+        "optional": false,
+        "dependencies": [
+          "1000000000000003",
+          "1000000000000004"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "La nuit est passée",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:golden_apple",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "200",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "exploration.snbt",
+    "title": "II — Le monde brisé",
+    "subtitle": "Routes effacées, arsenaux oubliés et mémoire du monde",
+    "quests": [
+      {
+        "id": "2000000000000001",
+        "title": "Lire le monde",
+        "description": [
+          "Après la chute de Vaelorn, les cartographes brûlèrent volontairement leurs cartes.",
+          "Ils voulaient cacher les sanctuaires, les prisons et les routes des Miracles.",
+          "",
+          "Fabrique une boussole et apprends à lire un monde qui a été conçu pour perdre ses visiteurs.",
+          "Ton premier sac représente la mémoire mobile de la compagnie."
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:compass",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:paper",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "75",
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "sophisticatedbackpacks:backpack",
+            "xp": null,
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2000000000000002",
+        "title": "Quitter les routes sûres",
+        "description": [
+          "Les routes sûres n'existent plus ; seulement des routes déjà payées par d'autres vies.",
+          "Les anciens messagers de la Voie sans Étoile marquaient les collines, jamais les chemins.",
+          "",
+          "Trace une voie vers l'inconnu et prévois toujours un retour."
+        ],
+        "optional": false,
+        "dependencies": [
+          "2000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Une route a été tracée",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:cooked_porkchop",
+            "xp": null,
+            "count": "8"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2000000000000003",
+        "title": "La porte du donjon",
+        "description": [
+          "Les donjons ne sont pas des ruines aléatoires.",
+          "Beaucoup furent des arsenaux, des observatoires ou des prisons construits pendant la Guerre du Voile.",
+          "",
+          "Chaque porte fermée peut protéger un trésor… ou retenir quelque chose."
+        ],
+        "optional": false,
+        "dependencies": [
+          "2000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le donjon a été découvert",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:arrow",
+            "xp": null,
+            "count": "24"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2000000000000004",
+        "title": "Un chemin de retour",
+        "description": [
+          "Les Waystones résonnent comme des ancres plantées dans la réalité.",
+          "Les chroniqueurs pensent qu'elles furent créées pour empêcher les armées du Roi",
+          "de se perdre lorsque le Voile déformait les distances.",
+          "",
+          "Relie deux refuges : la compagnie doit toujours disposer d'un chemin de retour."
+        ],
+        "optional": false,
+        "dependencies": [
+          "2000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Deux Waystones sont reliées",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:ender_pearl",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "125",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2000000000000005",
+        "title": "Le butin de chacun",
+        "description": [
+          "Vaelorn perdit sa première guerre lorsque ses soldats commencèrent à s'entretuer pour le butin.",
+          "Les guildes modernes suivent donc une règle simple : chacun garde ce que le monde lui révèle.",
+          "",
+          "Lootr n'est pas seulement pratique ; c'est une loi de survie collective."
+        ],
+        "optional": false,
+        "dependencies": [
+          "2000000000000003",
+          "2000000000000004"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le partage de butin fonctionne",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:emerald",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "200",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "boss_hunt.snbt",
+    "title": "III — La chasse",
+    "subtitle": "Gardiens anciens, cicatrices royales et premier éveil",
+    "quests": [
+      {
+        "id": "3000000000000001",
+        "title": "Le premier Champion",
+        "description": [
+          "Les Champions portent une marque semblable aux fissures visibles dans le ciel rouge.",
+          "Ils ne sont pas choisis par hasard : une force derrière le Voile amplifie les créatures",
+          "capables de répandre le plus de peur.",
+          "",
+          "Fais tomber ton premier Champion et observe son aura avant qu'elle disparaisse."
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Un Champion est tombé",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:experience_bottle",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "3000000000000002",
+        "title": "Une légende de Mowzie",
+        "description": [
+          "Les créatures majeures de Mowzie ne servaient ni Vaelorn ni les Dieux.",
+          "Elles sont les gardiennes d'un monde plus ancien que les royaumes humains.",
+          "",
+          "Certaines protègent des lieux sacrés ; d'autres jugent simplement tout intrus indigne.",
+          "Les vaincre prouve ta force, mais pas nécessairement ta justice."
+        ],
+        "optional": false,
+        "dependencies": [
+          "3000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_mowzie",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:gold_ingot",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "250",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "3000000000000003",
+        "title": "Le premier Cataclysme",
+        "description": [
+          "Les Cataclysmes sont les cicatrices militaires du règne de Vaelorn.",
+          "Forteresses animées, gardiens déformés et armes trop puissantes pour leurs propres maîtres",
+          "continuent d'obéir à des ordres prononcés depuis des siècles.",
+          "",
+          "Chaque Cataclysme détruit est une porte ouverte vers les fautes du Roi."
+        ],
+        "optional": false,
+        "dependencies": [
+          "3000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_cataclysm",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:diamond",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "350",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "3000000000000004",
+        "title": "Sous la glace",
+        "description": [
+          "Sous la glace repose un observatoire qui surveillait autrefois les mouvements du Voile.",
+          "Ses savants comprirent les premiers que les lunes n'étaient pas de simples phénomènes célestes.",
+          "",
+          "Découvre le secret de l'océan gelé et cherche les traces de leur dernière évacuation."
+        ],
+        "optional": false,
+        "dependencies": [
+          "3000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le secret de l'océan gelé est connu",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:prismarine_crystals",
+            "xp": null,
+            "count": "8"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "300",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "3000000000000005",
+        "title": "La compagnie des chasseurs",
+        "description": [
+          "Un boss majeur cherche souvent à briser le groupe avant de tuer ses membres.",
+          "Restez proches, partagez les soins et relevez celui qui tombe.",
+          "",
+          "Lorsque la compagnie survit comme un seul être, le septième Miracle commence à s'éveiller."
+        ],
+        "optional": false,
+        "dependencies": [
+          "3000000000000003",
+          "3000000000000004"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le groupe est resté debout",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:golden_apple",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "500",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "ascension.snbt",
+    "title": "IV — Ascension",
+    "subtitle": "Les quatre verrous et le fardeau des porteurs",
+    "quests": [
+      {
+        "id": "4000000000000001",
+        "title": "Le monde devient Expert",
+        "description": [
+          "Le Nether fut le premier royaume à brûler lorsque Vaelorn tenta de forcer le retour des Dieux.",
+          "Ses flammes ne sont pas naturelles : elles consument encore les serments prononcés pendant la guerre.",
+          "",
+          "Entre dans le Nether. Le monde reconnaîtra que tu as franchi le premier verrou.",
+          "Ancien monde : /ascensionrecover expert"
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:marque_expert",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:blaze_rod",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "200",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "4000000000000002",
+        "title": "Le royaume du Crépuscule",
+        "description": [
+          "La Naga protège l'entrée d'une archive du Crépuscule.",
+          "Ses anneaux furent gravés de runes destinées à empêcher le Roi de retrouver",
+          "la route des sanctuaires oubliés.",
+          "",
+          "Terrasse-la, mais souviens-toi : elle gardait cette porte bien avant ton arrivée."
+        ],
+        "optional": false,
+        "dependencies": [
+          "4000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_naga",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:diamond",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "350",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "4000000000000003",
+        "title": "Forteresses de l'au-delà",
+        "description": [
+          "Les forteresses Stalwart furent bâties après la chute du premier sceau.",
+          "Leurs gardiens reçurent un ordre impossible : tenir jusqu'au retour des Dieux.",
+          "",
+          "Ils n'ont jamais appris que les Dieux avaient choisi le silence."
+        ],
+        "optional": false,
+        "dependencies": [
+          "4000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Un gardien Stalwart est tombé",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:netherite_scrap",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "400",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "4000000000000004",
+        "title": "Le Dragon n'était qu'une porte",
+        "description": [
+          "Le Dragon de l'End n'était pas le maître de sa dimension.",
+          "Il était la dernière créature capable de maintenir fermé le verrou des confins.",
+          "",
+          "Sa mort ouvre la route vers les Miracles… et affaiblit ce qu'il retenait.",
+          "Tous les joueurs présents dans l'arène reçoivent automatiquement son sceau."
+        ],
+        "optional": false,
+        "dependencies": [
+          "4000000000000002",
+          "4000000000000003"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_dragon",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:dragon_breath",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "750",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "4000000000000005",
+        "title": "Le premier Miracle",
+        "description": [
+          "Un Miracle ne se laisse pas simplement ramasser.",
+          "Il mesure la volonté, la maîtrise et parfois les blessures de celui qui l'approche.",
+          "",
+          "Lorsqu'il choisit un porteur, il transmet aussi une part du fardeau de l'ancien gardien.",
+          "La puissance obtenue n'est jamais gratuite."
+        ],
+        "optional": false,
+        "dependencies": [
+          "4000000000000004",
+          "3000000000000005"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Un Miracle a choisi son porteur",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:nether_star",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "1000",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "guildes_destins.snbt",
+    "title": "V — Guildes et Destins",
+    "subtitle": "Les quatre ordres survivants et l'héritage des voies",
+    "quests": [
+      {
+        "id": "6000000000000001",
+        "title": "La Guilde renaît",
+        "description": [
+          "Après la Guerre du Voile, quatre ordres survécurent en cachant leurs véritables noms.",
+          "Ils devinrent des guildes, des compagnies et des bandes de voyageurs.",
+          "",
+          "Fonde la tienne. Une guilde n'est pas un bâtiment : c'est une promesse faite aux absents."
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "La Guilde est fondée",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_copper",
+            "xp": null,
+            "count": "12"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000002",
+        "title": "Choisir son destin",
+        "description": [
+          "Choisir une voie revient à hériter d'une mémoire incomplète.",
+          "Aucun ordre ne possède toute la vérité ; chacun a conservé une partie différente de la guerre.",
+          "",
+          "Le Sceau du Destin est remis automatiquement avec ton archétype.",
+          "Le changement de classe n'est pas encore disponible."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_destin",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000003",
+        "title": "Voie du Chevalier",
+        "description": [
+          "Ordre du Bastion de Solarys",
+          "Les Chevaliers tenaient les portes pendant que les autres évacuaient les cités.",
+          "Leur serment interdit d'abandonner un allié visible, même lorsque la bataille est perdue.",
+          "",
+          "Ta force vient moins de ton armure que de l'espace sûr créé derrière ton bouclier."
+        ],
+        "optional": true,
+        "dependencies": [
+          "6000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_chevalier",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_iron",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000004",
+        "title": "Voie du Berserker",
+        "description": [
+          "Serment des Cendres",
+          "Les Berserkers furent les survivants de la première Lune de Sang.",
+          "Ils apprirent à transformer la peur en mouvement avant qu'elle ne les paralyse.",
+          "",
+          "Leur colère n'est pas aveugle : elle est la mémoire de ceux qu'ils n'ont pas pu sauver."
+        ],
+        "optional": true,
+        "dependencies": [
+          "6000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_berserker",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_iron",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000005",
+        "title": "Voie de l'Éclaireur",
+        "description": [
+          "Voie sans Étoile",
+          "Les Éclaireurs continuèrent à voyager lorsque les constellations cessèrent de guider les hommes.",
+          "Ils lisent les reliefs, les sons et les mouvements plutôt que le ciel.",
+          "",
+          "Une compagnie sans éclaireur découvre souvent le danger au moment où il referme ses mâchoires."
+        ],
+        "optional": true,
+        "dependencies": [
+          "6000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_eclaireur",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_iron",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000006",
+        "title": "Voie du Chasseur de reliques",
+        "description": [
+          "Archive des Lanternes",
+          "Les Chasseurs de reliques sauvèrent les fragments que les rois voulaient détruire.",
+          "Ils savent qu'un objet ancien vaut moins pour son métal que pour la vérité qu'il refuse d'oublier.",
+          "",
+          "Rapporte les reliques. Quelqu'un devra un jour reconstituer l'histoire entière."
+        ],
+        "optional": true,
+        "dependencies": [
+          "6000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_chasseur_reliques",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_iron",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000007",
+        "title": "Le premier talent",
+        "description": [
+          "Les talents ne sont pas de simples techniques.",
+          "Ils reproduisent des gestes transmis de porteur en porteur depuis les quatre anciens ordres.",
+          "",
+          "Débloque ton premier talent et apprends à reconnaître la mémoire qui guide ton corps."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Un premier talent est débloqué",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:experience_bottle",
+            "xp": null,
+            "count": "6"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "250",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000008",
+        "title": "La première solde",
+        "description": [
+          "Les premières guildes payaient leurs membres pour empêcher les trésors",
+          "de devenir plus importants que les vies chargées de les rapporter.",
+          "",
+          "Reçois ta première solde. Une économie saine évite que la compagnie se fracture."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6000000000000007"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_copper",
+            "title": null,
+            "count": "10L"
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_iron",
+            "xp": null,
+            "count": "3"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6000000000000009",
+        "title": "Protéger sa fortune",
+        "description": [
+          "Vaelorn contrôlait ses armées en contrôlant leurs réserves.",
+          "Les guildes modernes protègent donc leur fortune des chefs comme des voleurs.",
+          "",
+          "Équipe ton portefeuille et garde une trace claire de ce qui appartient à la compagnie."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6000000000000007"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Mon portefeuille est équipé",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_copper",
+            "xp": null,
+            "count": "20"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "600000000000000A",
+        "title": "Le marché de la compagnie",
+        "description": [
+          "Le marché de la compagnie doit servir la préparation, jamais la domination.",
+          "Échange des ressources, équipe les nouveaux membres et conserve les objets narratifs hors du commerce.",
+          "",
+          "Un fragment de Miracle n'a pas de prix."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6000000000000008",
+          "6000000000000009"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Un échange a été réalisé",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_gold",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "400",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "cieux_rouges.snbt",
+    "title": "VI — Les Cieux Rouges",
+    "subtitle": "Le Roi de Cendres, le silence divin et la septième vérité",
+    "quests": [
+      {
+        "id": "7000000000000001",
+        "title": "Le premier présage",
+        "description": [
+          "Les anciennes chroniques affirment que les lunes sont les ombres des sept verrous.",
+          "Lorsque l'un d'eux faiblit, le ciel change de couleur avant que le monde ne ressente la fissure.",
+          "",
+          "Consulte /ascensionlore et observe la prochaine prévision céleste."
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le présage a été entendu",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:clock",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000002",
+        "title": "La Lune de Sang",
+        "description": [
+          "La Lune de Sang apparut pour la première fois lorsque Vaelorn brisa le troisième verrou.",
+          "Sa lumière rend les créatures sensibles à l'appel de la Couronne de Cendres.",
+          "",
+          "Survis dehors sans dormir. Écoute les murmures entre deux vagues.",
+          "Ils prononcent parfois le nom du Roi."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "La Lune de Sang est passée",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_lune_sang",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "350",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000003",
+        "title": "Les Remparts Brisés",
+        "description": [
+          "Les Remparts Brisés furent la dernière cité à refuser le couronnement de Vaelorn.",
+          "Ses habitants combattirent trois nuits avant d'abandonner les murs et de sauver les archives.",
+          "",
+          "Repousse une horde avec ta guilde et récupère la mémoire de ceux qui tinrent avant vous."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "La horde a été repoussée",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_horde",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "400",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000004",
+        "title": "La Lune Bleue",
+        "description": [
+          "La Lune Bleue marque un bref renforcement du Voile.",
+          "Pendant ces nuits rares, les murmures cessent et les anciens enchantements redeviennent stables.",
+          "",
+          "Profite de ce silence. Il ne dure jamais."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "La Lune Bleue a été observée",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:lapis_lazuli",
+            "xp": null,
+            "count": "16"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000005",
+        "title": "La Lune des Moissons",
+        "description": [
+          "La Lune des Moissons était autrefois célébrée par les cités assiégées.",
+          "On remplissait les réserves en sachant qu'une prochaine lune pourrait empêcher tout sommeil.",
+          "",
+          "Récolte et cuisine pour ceux qui combattront lorsque le ciel changera de nouveau."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Les réserves sont pleines",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:golden_carrot",
+            "xp": null,
+            "count": "8"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000006",
+        "title": "Des échos sous la pierre",
+        "description": [
+          "Sous la pierre, certaines cavernes répètent des sons qui n'ont jamais été produits près d'elles.",
+          "Les archivistes appelaient ces phénomènes les Échos du Voile.",
+          "",
+          "Descends profondément et écoute : une voix ancienne cherche encore le chemin de la surface."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000003"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Les profondeurs ont répondu",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:torch",
+            "xp": null,
+            "count": "32"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "150",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000007",
+        "title": "Le dernier refuge",
+        "description": [
+          "Le Dernier Refuge n'est pas un lieu précis.",
+          "C'est le nom donné à toute forteresse capable de protéger une compagnie pendant une Lune de Sang.",
+          "",
+          "Prévois deux sorties, des soins, un point de tir et une Waystone de secours.",
+          "Un refuge sans voie de fuite devient une tombe bien construite."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000003"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le refuge peut tenir une nuit",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:iron_block",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "250",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000008",
+        "title": "Les cendres du Roi",
+        "description": [
+          "Vaelorn, dernier roi des Sept Royaumes, fut surnommé le Couronné de Cendres.",
+          "Il voulait réunir les Miracles pour forcer les Dieux à revenir et sauver son peuple.",
+          "",
+          "Une voix derrière le Voile lui promit qu'un seul sacrifice suffirait.",
+          "Le Roi n'est pas mort. Sa couronne attend toujours les sept porteurs."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000004",
+          "7000000000000005"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le fragment royal est récupéré",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_roi_dechu",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "500",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "7000000000000009",
+        "title": "Le silence des Dieux",
+        "description": [
+          "Les Dieux n'ont pas abandonné le monde.",
+          "Ils ont traversé volontairement le Voile pour maintenir la prison fermée depuis l'autre côté.",
+          "",
+          "Leur silence est un acte de guerre sans fin.",
+          "Les rappeler pourrait libérer exactement ce qu'ils retiennent."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000006",
+          "7000000000000007"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le fragment divin est récupéré",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_dieux",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "500",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "700000000000000A",
+        "title": "La Chronique des Sept Miracles",
+        "description": [
+          "Réunis les quatre fragments et fabrique la Chronique des Sept Miracles.",
+          "",
+          "Elle révèle que six Miracles furent forgés comme des armes et des verrous.",
+          "Le septième ne fut jamais forgé : il apparaît lorsqu'une compagnie agit comme une seule volonté.",
+          "",
+          "Vous ne cherchez peut-être pas le Dernier Miracle.",
+          "Vous êtes peut-être en train de le devenir.",
+          "",
+          "Lis la suite avec /ascensionlore chronique puis ouvre le chapitre VIII."
+        ],
+        "optional": false,
+        "dependencies": [
+          "7000000000000008",
+          "7000000000000009"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:chronique_miracles",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:nether_star",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "1000",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "registre_verifie.snbt",
+    "title": "VII — Le Registre Vérifié",
+    "subtitle": "Interface, cartographie et premières preuves automatiques",
+    "quests": [
+      {
+        "id": "05E1AD2FCF630A6D",
+        "title": "Le registre vérifié",
+        "description": [
+          "ASCENSION commence à remplacer les validations manuelles par de vraies preuves.",
+          "Les anciennes quêtes restent intactes pour ne bloquer aucun monde existant.",
+          "",
+          "Le chapitre VII teste l'automatisation sur quatre boss fiables."
+        ],
+        "optional": false,
+        "dependencies": [],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le registre est ouvert",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:book",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2663870066FB1D62",
+        "title": "Lire le danger",
+        "description": [
+          "Observe un monstre, un coffre et un bloc avec Jade.",
+          "L'interface doit afficher des informations sans masquer les animations de combat."
+        ],
+        "optional": true,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Jade est correctement placé",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "75",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "4EDD2C1B74495396",
+        "title": "Mémoire du monde",
+        "description": [
+          "Ouvre la carte du monde et place un waypoint sur votre base.",
+          "La minimap et la carte sont des outils de navigation, pas une raison d'ignorer le danger."
+        ],
+        "optional": true,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Le premier waypoint est placé",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:compass",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "75",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "68483496B8FF9A47",
+        "title": "Aucun conflit de touches",
+        "description": [
+          "Ouvre les contrôles, recherche les conflits et attribue des touches claires à :",
+          "- Epic Fight ;",
+          "- arbre de talents ;",
+          "- carte et minimap ;",
+          "- portefeuille et quêtes."
+        ],
+        "optional": true,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Les touches sont organisées",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "75",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "77510172B8A03EF2",
+        "title": "Preuve : Légende de Mowzie",
+        "description": [
+          "Tue une créature majeure reconnue de Mowzie's Mobs.",
+          "Tous les joueurs présents à moins de 64 blocs reçoivent automatiquement cette preuve.",
+          "",
+          "Commande de diagnostic : /ascensionproofs"
+        ],
+        "optional": false,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_mowzie",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_iron",
+            "xp": null,
+            "count": "4"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "300",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2A793ED5E10B051C",
+        "title": "Preuve : Premier Cataclysme",
+        "description": [
+          "Tue un boss reconnu de L_Ender's Cataclysm.",
+          "La preuve est attribuée automatiquement aux joueurs présents à moins de 64 blocs."
+        ],
+        "optional": false,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_cataclysm",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "lightmanscurrency:coin_gold",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "400",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "52DD10BED190D59B",
+        "title": "Preuve : Naga",
+        "description": [
+          "Terrasse la Naga dans Twilight Forest.",
+          "Son trophée est désormais détecté automatiquement par ASCENSION."
+        ],
+        "optional": false,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_naga",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:diamond",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "300",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2757F4B1715D6586",
+        "title": "Preuve : Dragon",
+        "description": [
+          "Vaincs l'Ender Dragon.",
+          "Le sceau du Dragon valide automatiquement cette étape du registre."
+        ],
+        "optional": false,
+        "dependencies": [
+          "05E1AD2FCF630A6D"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_dragon",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:dragon_breath",
+            "xp": null,
+            "count": "2"
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "600",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "1FC4750CAE890EDB",
+        "title": "Les hauts faits retrouvés",
+        "description": [
+          "Ouvre l'écran des progrès et vérifie sa nouvelle navigation.",
+          "Better Advancements rend les grands arbres de progression plus lisibles."
+        ],
+        "optional": true,
+        "dependencies": [
+          "2663870066FB1D62",
+          "4EDD2C1B74495396",
+          "68483496B8FF9A47"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "L'écran des progrès fonctionne",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "2057B0B41C3574B6",
+        "title": "Les quatre preuves",
+        "description": [
+          "Réunis les quatre trophées automatiques.",
+          "Ils prouvent que le nouveau système de détection fonctionne sur votre monde et votre serveur.",
+          "",
+          "L'insigne obtenu servira plus tard à ouvrir les épreuves individuelles des Miracles."
+        ],
+        "optional": false,
+        "dependencies": [
+          "77510172B8A03EF2",
+          "2A793ED5E10B051C",
+          "52DD10BED190D59B",
+          "2757F4B1715D6586"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_mowzie",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_cataclysm",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_naga",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_dragon",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:insigne_chasseur_miracles",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:nether_star",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "1500",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "archives_interdites.snbt",
+    "title": "VIII — Les Archives Interdites",
+    "subtitle": "La guerre oubliée, le sacrifice divin et la septième vérité",
+    "quests": [
+      {
+        "id": "6800000000000001",
+        "title": "La Porte des Archives",
+        "description": [
+          "Sous les ruines de l'ancien royaume se trouve une archive que Vaelorn n'a pas réussi à brûler.",
+          "Ses portes ne s'ouvrent pas avec une clé, mais avec des souvenirs reconnus par le monde.",
+          "",
+          "Cette branche révèle le lore principal sans remplacer les chapitres de progression.",
+          "Les entrées suivantes se débloquent avec les fragments, sceaux et preuves déjà obtenus."
+        ],
+        "optional": false,
+        "dependencies": [
+          "1000000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "La porte des Archives est ouverte",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000002",
+        "title": "Le Sang du Ciel",
+        "description": [
+          "PREMIER VERROU — LE SANG DU CIEL",
+          "",
+          "La première Lune de Sang ne fut pas une catastrophe naturelle.",
+          "Elle apparut lorsque Vaelorn détruisit un sceau avec une arme divine incomplète.",
+          "",
+          "Depuis, chaque fissure du Voile colore la lune et attire les créatures",
+          "vers les lieux où reposent les fragments des Miracles."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_lune_sang",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "200",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000003",
+        "title": "La Mémoire des Remparts",
+        "description": [
+          "DEUXIÈME VERROU — LES REMPARTS",
+          "",
+          "Les habitants des Remparts Brisés comprirent que l'armée royale",
+          "ne cherchait pas leur cité, mais les archives cachées sous ses fondations.",
+          "",
+          "Ils abandonnèrent les murs pour sauver les textes.",
+          "Leur défaite militaire devint la plus grande victoire de la mémoire."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_horde",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "200",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000004",
+        "title": "Le Roi Couronné de Cendres",
+        "description": [
+          "VAELORN, LE COURONNÉ DE CENDRES",
+          "",
+          "Vaelorn n'était pas un tyran lorsqu'il monta sur le trône.",
+          "Il vit les royaumes mourir pendant que les Dieux restaient silencieux.",
+          "",
+          "Il réunit alors les Miracles pour les contraindre à revenir.",
+          "Mais la voix qui lui répondait n'était pas divine.",
+          "",
+          "Le Roi fut vaincu, jamais retrouvé, et sa couronne fut scellée sous la Citadelle Noire."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_roi_dechu",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "350",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000005",
+        "title": "Le Silence était un Sacrifice",
+        "description": [
+          "POURQUOI LES DIEUX SE SONT TUS",
+          "",
+          "Les Dieux découvrirent qu'une présence sans nom poussait contre le Voile.",
+          "Ils traversèrent la prison et refermèrent l'entrée derrière eux.",
+          "",
+          "Depuis l'autre côté, ils retiennent encore cette présence.",
+          "Leur absence protège le monde, mais condamne les mortels à combattre seuls.",
+          "",
+          "Les rappeler briserait le dernier sceau."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000003"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:fragment_dieux",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "350",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000006",
+        "title": "Ils n'étaient pas tous nos ennemis",
+        "description": [
+          "LES GARDIENS DU MONDE",
+          "",
+          "La Naga protégeait une archive. Le Dragon maintenait un verrou.",
+          "Les créatures de Mowzie surveillaient des sanctuaires plus anciens que l'humanité.",
+          "Les Cataclysmes continuaient d'exécuter les ordres du Roi.",
+          "",
+          "Certains gardiens étaient corrompus. D'autres faisaient encore leur devoir.",
+          "Les vaincre transfère une partie de leur fardeau aux porteurs des preuves."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000004",
+          "6800000000000005"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_mowzie",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_cataclysm",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_naga",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_dragon",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "600",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000007",
+        "title": "Les Héritiers des Quatre Voies",
+        "description": [
+          "LES QUATRE ORDRES SURVIVANTS",
+          "",
+          "Le Bastion de Solarys conserva le devoir.",
+          "Le Serment des Cendres conserva la volonté.",
+          "La Voie sans Étoile conserva les routes.",
+          "L'Archive des Lanternes conserva la vérité.",
+          "",
+          "Aucun ordre ne pouvait devenir seul le septième Miracle.",
+          "Leurs héritiers doivent combattre ensemble."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000005",
+          "6000000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_destin",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "300",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6800000000000008",
+        "title": "Le Dernier Miracle",
+        "description": [
+          "LA SEPTIÈME VÉRITÉ",
+          "",
+          "Six Miracles furent forgés comme des armes et comme des verrous.",
+          "Le septième ne possède aucune forme fixe.",
+          "",
+          "Il naît lorsque plusieurs volontés acceptent de porter un seul fardeau.",
+          "Il ne choisit pas un héros, mais une compagnie.",
+          "",
+          "Le Dernier Miracle n'est peut-être pas caché dans un donjon.",
+          "Il s'éveille déjà entre vous.",
+          "",
+          "La Chronique se termine par une prophétie :",
+          "« Quand les six lames boiront la lumière,",
+          "la septième décidera si le ciel doit être rouvert… ou fermé pour toujours. »"
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000006",
+          "6800000000000007"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:chronique_miracles",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:insigne_chasseur_miracles",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "minecraft:music_disc_otherside",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "1200",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "epreuves_miracles.snbt",
+    "title": "IX — Les Six Épreuves",
+    "subtitle": "Six responsabilités, deux voies et la première lumière du Septième",
+    "quests": [
+      {
+        "id": "6900000000000001",
+        "title": "Le Seuil des Six",
+        "description": [
+          "La Chronique ne donne ni carte ni nom de donjon.",
+          "Elle décrit six qualités nécessaires pour approcher le Septième Miracle.",
+          "",
+          "Trois épreuves concernent le corps : tenir, brûler, avancer.",
+          "Trois concernent l'âme : se souvenir, juger, choisir.",
+          "",
+          "Présente la Chronique et l'Insigne pour ouvrir les deux voies."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6800000000000008"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:chronique_miracles",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:insigne_chasseur_miracles",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "250",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000002",
+        "title": "I — Le Rempart",
+        "description": [
+          "PREMIÈRE ÉPREUVE DU CORPS — TENIR",
+          "",
+          "Le Bastion de Solarys enseignait qu'un rempart n'est pas un mur.",
+          "C'est une personne qui accepte de rester lorsque tous les instincts ordonnent de fuir.",
+          "",
+          "Présente les symboles de la protection, du métal et de la seconde chance.",
+          "Les objets sont vérifiés mais ne sont pas consommés."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:shield",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:iron_block",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:totem_of_undying",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_rempart",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "500",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000003",
+        "title": "II — La Braise",
+        "description": [
+          "DEUXIÈME ÉPREUVE DU CORPS — BRÛLER",
+          "",
+          "Le Serment des Cendres ne glorifiait pas la colère.",
+          "Il apprenait à traverser la douleur sans lui abandonner la direction du combat.",
+          "",
+          "Rapporte la chaleur du Nether et un métal qui a refusé de fondre."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:blaze_rod",
+            "title": null,
+            "count": "8"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:magma_cream",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:netherite_scrap",
+            "title": null,
+            "count": "2"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:golden_carrot",
+            "title": null,
+            "count": "8"
+          },
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Je maîtrise la flamme, elle ne me maîtrise pas",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_braise",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "650",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000004",
+        "title": "III — L'Horizon",
+        "description": [
+          "TROISIÈME ÉPREUVE DU CORPS — AVANCER",
+          "",
+          "La Voie sans Étoile parcourait le monde lorsque le ciel ne donnait plus aucune direction.",
+          "Un véritable éclaireur ne connaît pas toutes les routes : il sait en créer une nouvelle.",
+          "",
+          "Rassemble les instruments de ceux qui voyagent entre les dimensions."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000003"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:compass",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:spyglass",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:ender_eye",
+            "title": null,
+            "count": "8"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:phantom_membrane",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "J'ai retrouvé le chemin du retour",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_horizon",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "750",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000005",
+        "title": "IV — La Mémoire",
+        "description": [
+          "PREMIÈRE ÉPREUVE DE L'ÂME — SE SOUVENIR",
+          "",
+          "L'Archive des Lanternes affirmait qu'une vérité oubliée peut tuer deux fois.",
+          "La première fois lorsqu'elle se produit, la seconde lorsque personne ne sait plus pourquoi.",
+          "",
+          "Rassemble les outils qui retrouvent les morts, les sons et les mots disparus."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:recovery_compass",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:echo_shard",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:writable_book",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:amethyst_shard",
+            "title": null,
+            "count": "16"
+          },
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Je conserverai ce que le monde veut oublier",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_memoire",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "500",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000006",
+        "title": "V — Le Gardien",
+        "description": [
+          "DEUXIÈME ÉPREUVE DE L'ÂME — JUGER",
+          "",
+          "Tu as vaincu quatre gardiens et reçu une part de leur fardeau.",
+          "L'épreuve ne demande pas si tu étais assez fort pour les tuer.",
+          "Elle demande si tu comprends ce que leurs morts ont ouvert.",
+          "",
+          "Présente les quatre preuves et le cœur d'un monument englouti."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000005"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_mowzie",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_cataclysm",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_naga",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:preuve_dragon",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:heart_of_the_sea",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "Je reconnais que tous les gardiens n'étaient pas mes ennemis",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_gardien",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "900",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000007",
+        "title": "VI — La Volonté",
+        "description": [
+          "TROISIÈME ÉPREUVE DE L'ÂME — CHOISIR",
+          "",
+          "La Volonté n'est pas l'absence de peur.",
+          "C'est la décision prise lorsque toutes les conséquences sont enfin visibles.",
+          "",
+          "Présente ce que le monde offre de plus rare sans le sacrifier.",
+          "Puis affirme que tu acceptes de porter une décision qui dépassera ta propre survie."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000006"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:nether_star",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:netherite_ingot",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:dragon_breath",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:crying_obsidian",
+            "title": null,
+            "count": "8"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:ghast_tear",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "checkmark",
+            "item": null,
+            "title": "J'accepte de porter la décision finale",
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_volonte",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "1100",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6900000000000008",
+        "title": "La Convergence des Six",
+        "description": [
+          "LA CONVERGENCE",
+          "",
+          "Les six sceaux ne représentent pas six héros.",
+          "Ils représentent six responsabilités qu'aucune personne ne devrait porter seule.",
+          "",
+          "Réunis-les avec la Chronique et l'Insigne.",
+          "Leur lumière ne formera pas encore le Septième Miracle,",
+          "mais elle créera l'Éclat qui permettra un jour de choisir son éveil.",
+          "",
+          "Cet objet sera la clé du futur chapitre final."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000004",
+          "6900000000000007"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_rempart",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:sceau_braise",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:sceau_horizon",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:sceau_memoire",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:sceau_gardien",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:sceau_volonte",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:chronique_miracles",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:insigne_chasseur_miracles",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:eclat_septieme_miracle",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "2500",
+            "count": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "roi_de_cendres.snbt",
+    "title": "X — Le Roi de Cendres",
+    "subtitle": "La Citadelle Noire, le dernier roi et deux fins irréversibles",
+    "quests": [
+      {
+        "id": "6A00000000000001",
+        "title": "La Route de la Citadelle",
+        "description": [
+          "L'Éclat projette une route absente de toutes les cartes.",
+          "Elle mène vers la Citadelle Noire, où Vaelorn attend depuis la Guerre du Voile.",
+          "",
+          "Présente l'Éclat, la Chronique et l'Insigne."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6900000000000008"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:eclat_septieme_miracle",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:chronique_miracles",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "kubejs:insigne_chasseur_miracles",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "750",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6A00000000000002",
+        "title": "Le Rituel des Cendres",
+        "description": [
+          "Réunis les matériaux capables de supporter la chaleur du Roi et le froid du Voile.",
+          "Les objets sont vérifiés mais ne sont pas consommés.",
+          "",
+          "La Couronne obtenue permet d'utiliser /ascensionvaelorn."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6A00000000000001"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "minecraft:nether_star",
+            "title": null,
+            "count": null
+          },
+          {
+            "type": "item",
+            "item": "minecraft:crying_obsidian",
+            "title": null,
+            "count": "8"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:ghast_tear",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:dragon_breath",
+            "title": null,
+            "count": "4"
+          },
+          {
+            "type": "item",
+            "item": "minecraft:echo_shard",
+            "title": null,
+            "count": "8"
+          },
+          {
+            "type": "item",
+            "item": "kubejs:eclat_septieme_miracle",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "item",
+            "item": "kubejs:couronne_cendres_incomplete",
+            "xp": null,
+            "count": null
+          },
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "1250",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6A00000000000003",
+        "title": "Le Roi de Cendres",
+        "description": [
+          "VAELORN, LE COURONNÉ DE CENDRES",
+          "",
+          "Prépare une zone extérieure loin de la base, puis utilise /ascensionvaelorn.",
+          "Tous les joueurs présents à moins de 96 blocs lors de sa mort reçoivent sa cendre.",
+          "Ne lance pas le rituel près de coffres ou de constructions importantes."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6A00000000000002"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:preuve_vaelorn",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "3000",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6A00000000000004",
+        "title": "Le Choix du Septième",
+        "description": [
+          "Vaelorn tombe, mais la Couronne révèle deux conséquences.",
+          "",
+          "/ascensionending seal : fermer le Voile pour toujours.",
+          "/ascensionending open : rappeler les Dieux et exposer une nouvelle brèche.",
+          "La décision est irréversible pour chaque joueur.",
+          "",
+          "Les deux fins offrent exactement la même progression et 5 000 XP.",
+          "Choisis pour l'histoire, jamais pour le butin."
+        ],
+        "optional": false,
+        "dependencies": [
+          "6A00000000000003"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:coeur_septieme_miracle",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "3500",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6A00000000000005",
+        "title": "Épilogue — Le Ciel Scellé",
+        "description": [
+          "FIN — LE CIEL SCELLÉ",
+          "",
+          "Le Voile devient définitif. Les Dieux demeurent silencieux et les Lunes de Sang cessent.",
+          "Les mortels reconstruisent un monde qui n'attend plus aucun sauveur.",
+          "",
+          "ASCENSION: THE LAST MIRACLE — FIN DU CIEL SCELLÉ"
+        ],
+        "optional": false,
+        "dependencies": [
+          "6A00000000000004"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_ciel_ferme",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "5000",
+            "count": null
+          }
+        ]
+      },
+      {
+        "id": "6A00000000000006",
+        "title": "Épilogue — Le Ciel Rouvert",
+        "description": [
+          "FIN — LE CIEL ROUVERT",
+          "",
+          "Les Dieux reviennent et les Miracles chantent à nouveau.",
+          "Mais au-delà des étoiles, une présence aperçoit la brèche.",
+          "",
+          "ASCENSION: THE LAST MIRACLE — FIN DU CIEL ROUVERT"
+        ],
+        "optional": false,
+        "dependencies": [
+          "6A00000000000004"
+        ],
+        "tasks": [
+          {
+            "type": "item",
+            "item": "kubejs:sceau_ciel_ouvert",
+            "title": null,
+            "count": null
+          }
+        ],
+        "rewards": [
+          {
+            "type": "xp",
+            "item": null,
+            "xp": "5000",
+            "count": null
+          }
+        ]
+      }
+    ]
+  }
+]
