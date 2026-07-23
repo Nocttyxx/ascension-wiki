@@ -1,0 +1,8 @@
+ASCENSION GITHUB PAGES — VÉRIFICATION AVANT ENVOI
+
+[ ] Le dépôt GitHub s’appelle ascension-wiki
+[ ] Tous les fichiers de cette archive sont envoyés à la racine du dépôt
+[ ] La branche principale s’appelle main
+[ ] Settings > Pages > Source est réglé sur GitHub Actions
+[ ] Le workflow Actions est vert
+[ ] Le site s’ouvre depuis le lien affiché dans Settings > Pages
