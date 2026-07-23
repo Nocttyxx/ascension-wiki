@@ -18,10 +18,12 @@
         && (!kind.value || card.dataset.kind===kind.value)
         && (!mod.value || card.dataset.mod===mod.value)
         && (!danger.value || card.dataset.danger===danger.value);
-      card.hidden=!ok; if(ok) visible++;
+      card.hidden=!ok;
+      if(ok) visible++;
     });
     count.textContent=visible;
   }
+
   [search,kind,mod,danger].forEach(x=>x.addEventListener('input',apply));
   reset.addEventListener('click',()=>{search.value='';kind.value='';mod.value='';danger.value='';apply();});
 
@@ -31,13 +33,14 @@
 
   function openMob(slug){
     const e=data[slug]; if(!e)return;
-    const imgEl=document.querySelector(`[data-mob="${CSS.escape(slug)}"]`)?.closest('.bestiary-card')?.querySelector('img');
-    const cardImg=imgEl?.src || e.image;
-    const sourceNote=imgEl?.dataset.remote==='1'
-      ? 'Rendu complet chargé depuis un wiki public.'
-      : 'Carte d’identification propre utilisée lorsqu’aucun rendu complet fiable n’est disponible.';
-    content.innerHTML=`<div class="modal-mob"><div><img src="${cardImg}" alt="${e.name}"><p class="small">${sourceNote}</p></div><div><p class="page-kicker">${e.mod} • ${e.kind}</p><h1>${e.name}</h1><p class="latin-name">${e.name_en}</p><p>${e.description}</p><div class="modal-fields"><div><strong>Danger</strong><span>${e.danger}</span></div><div><strong>Apparition</strong><span>${e.spawn}</span></div><div><strong>Butin</strong><span>${e.loot}</span></div><div><strong>Conseil</strong><span>${e.tips}</span></div></div><p><strong>Identifiant technique</strong><br><span class="technical-id">${e.id}</span></p></div></div>`;
-    modal.hidden=false; document.body.style.overflow='hidden';
+    const img=document.querySelector(`[data-mob="${CSS.escape(slug)}"]`)?.closest('.bestiary-card')?.querySelector('img');
+    const cardImg=img?.src || e.image;
+    const source=img?.dataset.remote==='1'
+      ? 'Rendu complet chargé depuis le wiki du jeu ou du mod.'
+      : 'Image de secours propre : aucun rendu complet fiable n’a pu être chargé.';
+    content.innerHTML=`<div class="modal-mob"><div><img src="${cardImg}" alt="${e.name}"><p class="small">${source}</p></div><div><p class="page-kicker">${e.mod} • ${e.kind}</p><h1>${e.name}</h1><p class="latin-name">${e.name_en}</p><p>${e.description}</p><div class="modal-fields"><div><strong>Danger</strong><span>${e.danger}</span></div><div><strong>Apparition</strong><span>${e.spawn}</span></div><div><strong>Butin</strong><span>${e.loot}</span></div><div><strong>Conseil</strong><span>${e.tips}</span></div></div><p><strong>Identifiant technique</strong><br><span class="technical-id">${e.id}</span></p></div></div>`;
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
   }
 
   document.addEventListener('click',ev=>{
@@ -49,107 +52,71 @@
     if(ev.key==='Escape'&&!modal.hidden){modal.hidden=true;document.body.style.overflow='';}
   });
 
-  const cache = new Map();
+  const imgs=[...document.querySelectorAll('img[data-api][data-wiki-title]')];
+  const groups=new Map();
+  imgs.forEach(img=>{
+    if(!groups.has(img.dataset.api))groups.set(img.dataset.api,[]);
+    groups.get(img.dataset.api).push(img);
+  });
+  const chunks=(a,n)=>Array.from({length:Math.ceil(a.length/n)},(_,i)=>a.slice(i*n,i*n+n));
 
-  async function fetchJson(url){
-    if(cache.has(url)) return cache.get(url);
-    const p = fetch(url, {mode:'cors', credentials:'omit'}).then(r=>{
-      if(!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.json();
+  async function loadUrl(img, src){
+    return new Promise(resolve=>{
+      const probe=new Image();
+      probe.referrerPolicy='no-referrer';
+      probe.onload=()=>{
+        if(probe.naturalWidth < 40 || probe.naturalHeight < 40) return resolve(false);
+        img.src=src;
+        img.dataset.remote='1';
+        img.closest('.bestiary-image')?.classList.add('has-render');
+        resolve(true);
+      };
+      probe.onerror=()=>resolve(false);
+      probe.src=src;
     });
-    cache.set(url,p);
-    return p;
   }
 
-  function scoreFile(name, title){
-    const n=normalize(name), t=normalize(title);
-    let s=0;
-    for(const token of t.split(/\s+/).filter(x=>x.length>2)){
-      if(n.includes(token)) s+=5;
-    }
-    if(/\.(png|webp|jpg|jpeg)$/i.test(name)) s+=2;
-    if(/render|entity|mob|portrait/i.test(name)) s+=5;
-    if(/icon|item|spawn egg|banner|logo|map|gui|achievement|advancement/i.test(name)) s-=8;
-    return s;
-  }
-
-  async function exactThumbnail(api, title){
-    const u=api+'?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=900&titles='+encodeURIComponent(title);
-    const j=await fetchJson(u);
-    const pages=Object.values(j.query?.pages||{});
-    return pages.find(p=>p.thumbnail?.source)?.thumbnail?.source || null;
-  }
-
-  async function searchThumbnail(api, title){
-    const u=api+'?action=query&format=json&origin=*&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='+encodeURIComponent('intitle:"'+title+'"')+'&prop=pageimages&piprop=thumbnail&pithumbsize=900';
-    const j=await fetchJson(u);
-    const pages=Object.values(j.query?.pages||{});
-    const best=pages.filter(p=>p.thumbnail?.source).sort((a,b)=>{
-      return scoreFile(b.title,title)-scoreFile(a.title,title);
-    })[0];
-    return best?.thumbnail?.source || null;
-  }
-
-  async function pageFileThumbnail(api, title){
-    const q=api+'?action=query&format=json&origin=*&redirects=1&prop=images&imlimit=50&titles='+encodeURIComponent(title);
-    const j=await fetchJson(q);
-    const page=Object.values(j.query?.pages||{})[0];
-    const files=(page?.images||[]).map(x=>x.title).sort((a,b)=>scoreFile(b,title)-scoreFile(a,title));
-    const chosen=files.find(x=>scoreFile(x,title)>0);
-    if(!chosen) return null;
-    const q2=api+'?action=query&format=json&origin=*&prop=imageinfo&iiprop=url&iiurlwidth=900&titles='+encodeURIComponent(chosen);
-    const j2=await fetchJson(q2);
-    const p2=Object.values(j2.query?.pages||{})[0];
-    return p2?.imageinfo?.[0]?.thumburl || p2?.imageinfo?.[0]?.url || null;
-  }
-
-  async function resolveImage(img){
-    if(img.dataset.resolving==='1' || img.dataset.remote==='1') return;
-    const apis=(img.dataset.apis||'').split('|').filter(Boolean);
-    const titles=(img.dataset.wikiTitles||'').split('|').filter(Boolean);
-    if(!apis.length || !titles.length) return;
-    img.dataset.resolving='1';
-
-    for(const api of apis){
-      for(const title of titles){
-        for(const resolver of [exactThumbnail, searchThumbnail, pageFileThumbnail]){
-          try{
-            const src=await resolver(api,title);
-            if(src){
-              const probe=new Image();
-              const ok=await new Promise(resolve=>{
-                probe.onload=()=>resolve(true);
-                probe.onerror=()=>resolve(false);
-                probe.referrerPolicy='no-referrer';
-                probe.src=src;
-              });
-              if(ok){
-                img.src=src;
-                img.dataset.remote='1';
-                img.classList.add('portrait-loaded');
-                img.closest('.bestiary-image')?.classList.add('has-render');
-                return;
-              }
-            }
-          }catch(_){}
-        }
+  async function searchOne(img){
+    const api=img.dataset.api;
+    const title=img.dataset.wikiTitle;
+    try{
+      const url=api+'?action=query&format=json&origin=*&generator=search&gsrnamespace=0&gsrlimit=4&gsrsearch='+encodeURIComponent(title)+'&prop=pageimages&piprop=thumbnail&pithumbsize=720';
+      const j=await fetch(url).then(r=>r.json());
+      const pages=Object.values(j.query?.pages||{}).filter(p=>p.thumbnail?.source);
+      for(const p of pages){
+        if(await loadUrl(img,p.thumbnail.source)) return;
       }
-    }
-    img.dataset.resolving='0';
+    }catch(_){}
   }
 
-  const candidates=[...document.querySelectorAll('img[data-apis][data-wiki-titles]')];
-  if('IntersectionObserver' in window){
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          resolveImage(e.target);
-          observer.unobserve(e.target);
+  for(const [api,list] of groups){
+    for(const batch of chunks(list,30)){
+      const titles=batch.map(i=>i.dataset.wikiTitle);
+      const url=api+'?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=720&titles='+encodeURIComponent(titles.join('|'));
+      fetch(url).then(r=>r.json()).then(async j=>{
+        const wanted=new Map(batch.map(i=>[normalize(i.dataset.wikiTitle),i]));
+        const aliases=new Map();
+        (j.query?.normalized||[]).forEach(x=>aliases.set(normalize(x.to),normalize(x.from)));
+        (j.query?.redirects||[]).forEach(x=>aliases.set(normalize(x.to),normalize(x.from)));
+        const resolved=new Set();
+
+        for(const p of Object.values(j.query?.pages||{})){
+          if(!p.thumbnail?.source)continue;
+          let k=normalize(p.title);
+          let img=wanted.get(k);
+          if(!img){
+            const original=aliases.get(k);
+            if(original)img=wanted.get(original);
+          }
+          if(img && await loadUrl(img,p.thumbnail.source)) resolved.add(img);
         }
+
+        for(const img of batch){
+          if(!resolved.has(img)) searchOne(img);
+        }
+      }).catch(()=>{
+        batch.forEach(searchOne);
       });
-    },{rootMargin:'700px'});
-    candidates.forEach(img=>observer.observe(img));
-  }else{
-    candidates.forEach(resolveImage);
+    }
   }
 })();
