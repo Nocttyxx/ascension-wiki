@@ -35,9 +35,15 @@
     const e=data[slug]; if(!e)return;
     const img=document.querySelector(`[data-mob="${CSS.escape(slug)}"]`)?.closest('.bestiary-card')?.querySelector('img');
     const cardImg=img?.src || e.image;
-    const source=img?.dataset.remote==='1'
-      ? 'Rendu complet chargé depuis le wiki du jeu ou du mod.'
-      : 'Image de secours propre : aucun rendu complet fiable n’a pu être chargé.';
+    const source=img?.dataset.portraitStatus==='captured'
+      ? 'Portrait capturé directement dans ASCENSION, détouré, recadré et vérifié.'
+      : img?.dataset.portraitStatus==='reconstructed'
+        ? 'Portrait reconstruit spécialement pour le wiki à partir des captures et du modèle de la créature.'
+        : img?.dataset.portraitStatus==='recovered'
+          ? 'Portrait récupéré et recadré depuis une capture effectuée directement dans le modpack.'
+          : img?.dataset.remote==='1'
+            ? 'Rendu complet chargé depuis le wiki du jeu ou du mod.'
+            : 'Image de secours propre : aucun rendu complet fiable n’a pu être chargé.';
     content.innerHTML=`<div class="modal-mob"><div><img src="${cardImg}" alt="${e.name}"><p class="small">${source}</p></div><div><p class="page-kicker">${e.mod} • ${e.kind}</p><h1>${e.name}</h1><p class="latin-name">${e.name_en}</p><p>${e.description}</p><div class="modal-fields"><div><strong>Danger</strong><span>${e.danger}</span></div><div><strong>Apparition</strong><span>${e.spawn}</span></div><div><strong>Butin</strong><span>${e.loot}</span></div><div><strong>Conseil</strong><span>${e.tips}</span></div></div><p><strong>Identifiant technique</strong><br><span class="technical-id">${e.id}</span></p></div></div>`;
     modal.hidden=false;
     document.body.style.overflow='hidden';
