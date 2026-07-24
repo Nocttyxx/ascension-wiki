@@ -734,6 +734,7 @@ function detailMarkup(boss) {
     <div class="boss-drawer-links">
       <a class="button" href="${escapeHtml(boss.quest)}">Voir les quêtes</a>
       ${boss.bestiary ? `<a class="button secondary" href="${escapeHtml(boss.bestiary)}">Ouvrir le bestiaire</a>` : ''}
+      <a class="button secondary" href="arsenal.html?boss=${escapeHtml(boss.id)}">Préparer l’équipement</a>
       <button class="button secondary" id="boss-copy-plan" type="button">Copier le plan</button>
     </div>
   `;

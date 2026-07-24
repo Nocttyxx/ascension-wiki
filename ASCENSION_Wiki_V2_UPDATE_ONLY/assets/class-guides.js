@@ -312,9 +312,12 @@ function renderDetail() {
         </div>
       </div>
     </div>
-    <button class="button ${selected ? 'secondary' : ''}" id="save-class-choice" type="button">
-      ${selected ? 'Classe enregistrée dans Mon aventure' : 'Choisir cette classe dans le wiki'}
-    </button>
+    <div class="class-detail-actions">
+      <button class="button ${selected ? 'secondary' : ''}" id="save-class-choice" type="button">
+        ${selected ? 'Classe enregistrée dans Mon aventure' : 'Choisir cette classe dans le wiki'}
+      </button>
+      <a class="button secondary" href="arsenal.html?class=${escapeHtml(item.id)}">Voir l’arsenal conseillé</a>
+    </div>
   `;
 
   overviewPanel.innerHTML = overviewMarkup(item);
