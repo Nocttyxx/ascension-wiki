@@ -1,0 +1,23 @@
+{
+  "schema": "ascension-minecraft-progress",
+  "version": 1,
+  "player": {
+    "name": "NomDuJoueur",
+    "uuid": "",
+    "className": "chevalier",
+    "completed": [
+      "personal-skills-open",
+      "personal-expedition-nether"
+    ]
+  },
+  "team": {
+    "id": "ftb-team-id",
+    "name": "Les Veilleurs du Voile",
+    "completed": [
+      "company-chapter-1",
+      "company-proof-naga"
+    ],
+    "ending": ""
+  },
+  "exportedAt": "2026-07-24T00:00:00.000Z"
+}

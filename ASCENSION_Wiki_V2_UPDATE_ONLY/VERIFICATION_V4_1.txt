@@ -1,0 +1,16 @@
+ASCENSION Wiki V4.1 — Rapport de vérification
+==================================================
+
+Progression personnelle : 19 cases + 1 classe = 20 jalons
+Progression compagnie : 30 cases + 1 fin = 31 jalons
+Total combiné : 51 jalons
+Migration V4.0 : implémentée
+Import partiel : fusion sans effacer l’autre vue
+
+$ node --check /mnt/data/ASCENSION_Wiki_V4_1_PROGRESSION_HYBRIDE/site/assets/adventure.js
+Code: 0
+
+
+$ python /mnt/data/ASCENSION_Wiki_V4_1_PROGRESSION_HYBRIDE/scripts/check_site.py /mnt/data/ASCENSION_Wiki_V4_1_PROGRESSION_HYBRIDE/site
+Code: 0
+OK : 19 HTML et 1 CSS vérifiés, aucun lien local manquant.

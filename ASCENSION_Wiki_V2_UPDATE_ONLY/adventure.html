@@ -2,492 +2,310 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Tableau de bord interactif de progression pour ASCENSION: The Last Miracle">
+<meta name="description" content="Progression personnelle et collective pour ASCENSION: The Last Miracle">
 <title>Mon aventure — ASCENSION: The Last Miracle</title>
 <link rel="icon" href="favicon.ico"><link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="adventure-page">
-<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v4.0 Alpha</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
+<body class="adventure-page adventure-hybrid-page">
+<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v4.1 Progression hybride</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
 
 <main data-adventure-root>
-<section class="adventure-hero">
-  <div class="adventure-hero-copy">
-    <p class="eyebrow">Le Compagnon de l’Ascension</p>
-    <h1>Mon aventure</h1>
-    <p class="lead">Un tableau de bord personnel pour suivre ta classe, tes chapitres, tes preuves, les boss vaincus et les Six Épreuves. Tout reste enregistré uniquement dans ton navigateur.</p>
-    <div class="badges"><span>Sauvegarde locale</span><span>34 jalons</span><span>Mode spoilers</span><span>Solo & coop</span></div>
-  </div>
-  <div class="adventure-sigil">
-    <img src="assets/modpack_icon_official.png" alt="Sceau d’ASCENSION">
-    <span id="hero-progress">0%</span>
-    <small>de l’Ascension accomplie</small>
-  </div>
+<section class="adventure-hero hybrid-hero">
+<div class="adventure-hero-copy"><p class="eyebrow">Le Compagnon de l’Ascension</p><h1>Mon aventure</h1>
+<p class="lead">Deux progressions complémentaires : ton parcours personnel et l’histoire partagée de ta compagnie. Les données de la V4.0 sont migrées automatiquement.</p>
+<div class="badges"><span>Personnel + collectif</span><span>Migration V4.0</span><span>Export compatible sync</span><span>Solo fusionné</span></div></div>
+<div class="adventure-sigil"><img src="assets/modpack_icon_official.png" alt="Sceau d’ASCENSION"><span id="overall-percent">0%</span><small>progression combinée</small></div>
 </section>
 
-<section class="adventure-dashboard">
-  <article class="adventure-progress-panel">
-    <div class="adventure-progress-heading">
-      <div>
-        <p class="page-kicker">Progression globale</p>
-        <h2 id="progress-title">Le voyage commence</h2>
-      </div>
-      <strong id="progress-percent">0%</strong>
-    </div>
-    <div class="adventure-progress-track" aria-label="Progression globale">
-      <span id="progress-bar"></span>
-    </div>
-    <div class="adventure-stat-row">
-      <div><strong id="progress-completed">0</strong><span>jalons accomplis</span></div>
-      <div><strong id="chapter-count">0/10</strong><span>chapitres</span></div>
-      <div><strong id="proof-count">0/4</strong><span>preuves</span></div>
-      <div><strong id="trial-count">0/6</strong><span>Épreuves</span></div>
-    </div>
-  </article>
-
-  <article class="adventure-next-panel">
-    <p class="page-kicker">Prochain objectif</p>
-    <h2 id="next-objective">Choisir une classe</h2>
-    <p id="next-objective-detail">Définis ton rôle dans la compagnie avant de poursuivre.</p>
-    <a id="next-objective-link" class="button secondary" href="classes.html">Voir les classes</a>
-  </article>
+<section class="hybrid-dashboard">
+<article class="scope-progress personal-progress-card" data-open-scope="personal" tabindex="0">
+<div class="scope-card-head"><span class="scope-icon">✦</span><div><p class="page-kicker">Ma progression</p><h2 id="personal-title">Le porteur s’éveille</h2></div><strong id="personal-percent">0%</strong></div>
+<div class="adventure-progress-track"><span id="personal-bar"></span></div>
+<div class="scope-meta"><b id="personal-count">0/20</b><span>classe, préparation, exploration et participation</span></div>
+</article>
+<article class="scope-progress company-progress-card" data-open-scope="company" tabindex="0">
+<div class="scope-card-head"><span class="scope-icon">♜</span><div><p class="page-kicker">Progression de la compagnie</p><h2 id="company-title">La compagnie se rassemble</h2></div><strong id="company-percent">0%</strong></div>
+<div class="adventure-progress-track"><span id="company-bar"></span></div>
+<div class="scope-meta"><b id="company-count">0/31</b><span>chapitres, preuves, boss, Épreuves et fin</span></div>
+</article>
+<article class="adventure-next-panel hybrid-next"><p class="page-kicker">Prochain objectif</p><h2 id="next-objective">Choisir une classe</h2><p id="next-objective-detail">Définis ton rôle personnel.</p><button id="next-objective-button" class="button secondary" type="button">Ouvrir l’objectif</button></article>
 </section>
 
+<section class="hybrid-mode-panel">
+<div class="hybrid-tabs" role="tablist" aria-label="Type de progression">
+<button class="hybrid-tab active" id="tab-personal" type="button" role="tab" aria-selected="true" aria-controls="panel-personal" data-tab="personal"><span>✦</span><b>Ma progression</b><small>Ce que j’ai personnellement accompli</small></button>
+<button class="hybrid-tab" id="tab-company" type="button" role="tab" aria-selected="false" aria-controls="panel-company" data-tab="company"><span>♜</span><b>Ma compagnie</b><small>Ce que l’équipe a validé ensemble</small></button>
+</div>
+<div class="hybrid-save-line"><span id="save-status">Sauvegarde locale prête.</span><label class="spoiler-switch"><input id="spoiler-toggle" type="checkbox"><span></span><b>Mode spoilers</b></label></div>
+</section>
+
+<div class="hybrid-pane active" id="panel-personal" role="tabpanel" aria-labelledby="tab-personal" data-pane="personal">
 <section class="adventure-profile">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Profil de campagne</p><h2>Qui porte le Miracle ?</h2></div>
-    <label class="spoiler-switch">
-      <input id="spoiler-toggle" type="checkbox">
-      <span></span>
-      <b>Mode spoilers</b>
-    </label>
-  </div>
-
-  <div class="adventure-profile-grid">
-    <label class="adventure-field">
-      <span>Nom de la compagnie</span>
-      <input id="company-name" type="text" maxlength="40" placeholder="Les Veilleurs du Voile">
-    </label>
-    <div class="adventure-save-status" id="save-status" role="status">Sauvegarde locale prête.</div>
-  </div>
-
-  <fieldset class="class-picker">
-    <legend>Classe choisie</legend>
-    <label><input type="radio" name="adventure-class" value="chevalier"><img src="assets/items/sceau_chevalier.png" alt=""><span><strong>Chevalier</strong><small>Protection et première ligne</small></span></label>
-    <label><input type="radio" name="adventure-class" value="berserker"><img src="assets/items/sceau_berserker.png" alt=""><span><strong>Berserker</strong><small>Dégâts au contact</small></span></label>
-    <label><input type="radio" name="adventure-class" value="eclaireur"><img src="assets/items/sceau_eclaireur.png" alt=""><span><strong>Éclaireur</strong><small>Distance et reconnaissance</small></span></label>
-    <label><input type="radio" name="adventure-class" value="reliques"><img src="assets/items/sceau_chasseur_reliques.png" alt=""><span><strong>Chasseur de reliques</strong><small>Exploration et préparation</small></span></label>
-  </fieldset>
+<div class="adventure-section-head"><div><p class="page-kicker">Profil individuel</p><h2>Le porteur du Miracle</h2></div><span class="scope-badge personal">PERSONNEL</span></div>
+<div class="adventure-profile-grid two-fields">
+<label class="adventure-field"><span>Nom du joueur</span><input id="player-name" type="text" maxlength="40" placeholder="Haytem"></label>
+<div class="solo-mode-note"><strong>Mode solo</strong><small id="solo-mode-text">La progression reste séparée tant qu’aucune compagnie n’est définie.</small></div>
+</div>
+<fieldset class="class-picker"><legend>Classe personnelle</legend><label><input type="radio" name="adventure-class" value="chevalier"><img src="assets/items/sceau_chevalier.png" alt=""><span><strong>Chevalier</strong><small>Protection et première ligne</small></span></label><label><input type="radio" name="adventure-class" value="berserker"><img src="assets/items/sceau_berserker.png" alt=""><span><strong>Berserker</strong><small>Dégâts au contact</small></span></label><label><input type="radio" name="adventure-class" value="eclaireur"><img src="assets/items/sceau_eclaireur.png" alt=""><span><strong>Éclaireur</strong><small>Distance et reconnaissance</small></span></label><label><input type="radio" name="adventure-class" value="reliques"><img src="assets/items/sceau_chasseur_reliques.png" alt=""><span><strong>Chasseur de reliques</strong><small>Exploration et préparation</small></span></label></fieldset>
 </section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Préparation</p><h2>Objectifs personnels</h2></div><span>6 jalons</span></div><div class="adventure-goal-grid three-column"><label class="adventure-goal" data-goal-card="personal-skills-open">
+<input type="checkbox" data-scope="personal" data-goal="personal-skills-open">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Arbre de compétences ouvert</strong><small>Découvrir l’arbre et comprendre les premières branches.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-skills-first">
+<input type="checkbox" data-scope="personal" data-goal="personal-skills-first">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Premier point dépensé</strong><small>Débloquer une première amélioration personnelle.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-backpack">
+<input type="checkbox" data-scope="personal" data-goal="personal-backpack">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Sac d’expédition prêt</strong><small>Préparer nourriture, soins, blocs et équipement de secours.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-waystone">
+<input type="checkbox" data-scope="personal" data-goal="personal-waystone">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Première Waystone activée</strong><small>Créer un point de retour sûr pour tes explorations.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-map">
+<input type="checkbox" data-scope="personal" data-goal="personal-map">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Région cartographiée</strong><small>Utiliser les cartes Xaero pour sécuriser une zone.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-voice">
+<input type="checkbox" data-scope="personal" data-goal="personal-voice">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Chat vocal configuré</strong><small>Tester le microphone et les raccourcis de communication.</small></span>
+</label></div></section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Exploration</p><h2>Mes découvertes</h2></div><a href="systems.html">Voir les systèmes →</a></div><div class="adventure-goal-grid"><label class="adventure-goal" data-goal-card="personal-expedition-nether">
+<input type="checkbox" data-scope="personal" data-goal="personal-expedition-nether">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Nether exploré</strong><small>Établir une route personnelle sûre dans le Nether.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-expedition-twilight">
+<input type="checkbox" data-scope="personal" data-goal="personal-expedition-twilight">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Forêt du Crépuscule visitée</strong><small>Entrer dans la dimension et repérer les premières structures.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-expedition-end">
+<input type="checkbox" data-scope="personal" data-goal="personal-expedition-end">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>End atteint</strong><small>Participer au voyage jusqu’à l’End.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-expedition-aquamirae">
+<input type="checkbox" data-scope="personal" data-goal="personal-expedition-aquamirae">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Océans gelés explorés</strong><small>Préparer respiration, mobilité et résistance au froid.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-expedition-stalwart">
+<input type="checkbox" data-scope="personal" data-goal="personal-expedition-stalwart">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Forteresse Stalwart découverte</strong><small>Trouver personnellement une structure Stalwart.</small></span>
+</label></div></section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Expérience de combat</p><h2>Boss auxquels j’ai participé</h2></div><a href="bosses.html">Consulter les boss →</a></div><div class="adventure-goal-grid"><label class="adventure-goal" data-goal-card="personal-participation-lich">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-lich">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Liche du Crépuscule</strong><small>J’ai participé au combat.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-minoshroom">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-minoshroom">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Minoshroom</strong><small>J’ai participé au combat.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-hydra">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-hydra">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Hydre</strong><small>J’ai participé au combat.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-knight-phantom">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-knight-phantom">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Chevaliers fantômes</strong><small>J’ai participé à la rencontre.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-ur-ghast">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-ur-ghast">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Ur-Ghast</strong><small>J’ai participé au combat.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-alpha-yeti">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-alpha-yeti">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Alpha Yeti</strong><small>J’ai participé au combat.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-snow-queen">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-snow-queen">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Reine des Neiges</strong><small>J’ai participé au combat.</small></span>
+</label><label class="adventure-goal" data-goal-card="personal-participation-vaelorn">
+<input type="checkbox" data-scope="personal" data-goal="personal-participation-vaelorn">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Vaelorn</strong><small>J’étais présent lors de la confrontation finale.</small></span>
+</label></div></section>
+</div>
 
-<section class="adventure-section" id="adventure-chapters">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Campagne</p><h2>Les dix chapitres</h2></div>
-    <a href="progression.html">Lire la campagne complète →</a>
-  </div>
-  <div class="adventure-goal-grid chapter-goal-grid">
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-1">
-          <input type="checkbox" data-goal="chapter-1">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">I</span>
-          <span class="goal-copy">
-            <strong>Les survivants</strong>
-            <small>Survivre au réveil du Voile.</small>
-            <a href="quests.html#prologue">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-2">
-          <input type="checkbox" data-goal="chapter-2">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">II</span>
-          <span class="goal-copy">
-            <strong>Le monde brisé</strong>
-            <small>Cartographier le monde et établir les premières routes.</small>
-            <a href="quests.html#exploration">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-3">
-          <input type="checkbox" data-goal="chapter-3">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">III</span>
-          <span class="goal-copy">
-            <strong>La chasse</strong>
-            <small>Devenir chasseurs et affronter les premiers gardiens.</small>
-            <a href="quests.html#boss_hunt">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-4">
-          <input type="checkbox" data-goal="chapter-4">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">IV</span>
-          <span class="goal-copy">
-            <strong>Ascension</strong>
-            <small>Franchir les premiers verrous de puissance.</small>
-            <a href="quests.html#ascension">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-5">
-          <input type="checkbox" data-goal="chapter-5">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">V</span>
-          <span class="goal-copy">
-            <strong>Guildes et Destins</strong>
-            <small>Choisir une voie et organiser la compagnie.</small>
-            <a href="quests.html#guildes_destins">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-6">
-          <input type="checkbox" data-goal="chapter-6">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">VI</span>
-          <span class="goal-copy">
-            <strong>Les Cieux Rouges</strong>
-            <small>Lire les présages et survivre aux événements célestes.</small>
-            <a href="quests.html#cieux_rouges">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-7">
-          <input type="checkbox" data-goal="chapter-7">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">VII</span>
-          <span class="goal-copy">
-            <strong>Le Registre Vérifié</strong>
-            <small>Réunir les preuves automatiques de victoire.</small>
-            <a href="quests.html#registre_verifie">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-8">
-          <input type="checkbox" data-goal="chapter-8">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">VIII</span>
-          <span class="goal-copy">
-            <strong>Les Archives Interdites</strong>
-            <small>Comprendre la guerre oubliée et ses conséquences.</small>
-            <a href="quests.html#archives_interdites">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-9">
-          <input type="checkbox" data-goal="chapter-9">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">IX</span>
-          <span class="goal-copy">
-            <strong>Les Six Épreuves</strong>
-            <small>Porter les six responsabilités du Septième.</small>
-            <a href="quests.html#epreuves_miracles">Voir les quêtes →</a>
-          </span>
-        </label>
-        
-        <label class="adventure-goal chapter-goal" data-goal-card="chapter-10">
-          <input type="checkbox" data-goal="chapter-10">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="chapter-orb">X</span>
-          <span class="goal-copy">
-            <strong>Le Roi de Cendres</strong>
-            <small>Atteindre Vaelorn et terminer la campagne.</small>
-            <a href="quests.html#roi_de_cendres">Voir les quêtes →</a>
-          </span>
-        </label>
-        </div>
+<div class="hybrid-pane" id="panel-company" role="tabpanel" aria-labelledby="tab-company" data-pane="company" hidden>
+<section class="adventure-profile company-profile">
+<div class="adventure-section-head"><div><p class="page-kicker">FTB Teams</p><h2>Identité de la compagnie</h2></div><span class="scope-badge company">COLLECTIF</span></div>
+<div class="adventure-profile-grid company-fields">
+<label class="adventure-field"><span>Nom de la compagnie</span><input id="company-name" type="text" maxlength="40" placeholder="Les Veilleurs du Voile"></label>
+<label class="adventure-field"><span>Identifiant d’équipe (facultatif)</span><input id="team-id" type="text" maxlength="80" placeholder="Sera rempli par l’export Minecraft"></label>
+</div>
+<div class="collective-rule"><strong>Règle ASCENSION</strong><p>Les chapitres, preuves coopératives, victoires principales, Six Épreuves, Vaelorn et la fin appartiennent à toute la compagnie.</p></div>
 </section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Campagne partagée</p><h2>Les dix chapitres</h2></div><a href="progression.html">Lire la campagne →</a></div><div class="adventure-goal-grid chapter-goal-grid"><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-1">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-1">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">I</span>
+<span class="goal-copy"><strong>Les survivants</strong><small>La compagnie a terminé le premier chapitre.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-2">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-2">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">II</span>
+<span class="goal-copy"><strong>Le monde brisé</strong><small>Les routes et objectifs initiaux sont accomplis.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-3">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-3">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">III</span>
+<span class="goal-copy"><strong>La chasse</strong><small>La compagnie a franchi les premières grandes rencontres.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-4">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-4">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">IV</span>
+<span class="goal-copy"><strong>Ascension</strong><small>Les premiers verrous de puissance sont franchis.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-5">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-5">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">V</span>
+<span class="goal-copy"><strong>Guildes et Destins</strong><small>Les rôles de la compagnie sont établis.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-6">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-6">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">VI</span>
+<span class="goal-copy"><strong>Les Cieux Rouges</strong><small>La compagnie a survécu aux présages célestes.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-7">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-7">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">VII</span>
+<span class="goal-copy"><strong>Le Registre Vérifié</strong><small>Les preuves demandées sont réunies.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-8">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-8">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">VIII</span>
+<span class="goal-copy"><strong>Les Archives Interdites</strong><small>Les archives et révélations sont débloquées.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-9">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-9">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">IX</span>
+<span class="goal-copy"><strong>Les Six Épreuves</strong><small>Les six responsabilités sont portées.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label><label class="adventure-goal chapter-goal" data-goal-card="company-chapter-10">
+<input type="checkbox" data-scope="company" data-goal="company-chapter-10">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="chapter-orb">X</span>
+<span class="goal-copy"><strong>Le Roi de Cendres</strong><small>La campagne principale est terminée.</small><a href="quests.html">Voir les quêtes →</a></span>
+</label></div></section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Registre vérifié</p><h2>Preuves coopératives</h2></div><a href="bosses.html">Comprendre les preuves →</a></div><div class="adventure-goal-grid four-column"><label class="adventure-goal icon-goal" data-goal-card="company-proof-mowzie">
+<input type="checkbox" data-scope="company" data-goal="company-proof-mowzie">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/preuve_mowzie.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Légende de Mowzie</strong><small>Preuve coopérative obtenue.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-proof-cataclysm">
+<input type="checkbox" data-scope="company" data-goal="company-proof-cataclysm">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/preuve_cataclysm.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Premier Cataclysme</strong><small>Preuve coopérative obtenue.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-proof-naga">
+<input type="checkbox" data-scope="company" data-goal="company-proof-naga">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/preuve_naga.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Trophée de la Naga</strong><small>Preuve coopérative obtenue.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-proof-dragon">
+<input type="checkbox" data-scope="company" data-goal="company-proof-dragon">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/preuve_dragon.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Sceau du Dragon</strong><small>Preuve coopérative obtenue.</small></span>
+</label></div></section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Victoires communes</p><h2>Boss vaincus par la compagnie</h2></div><a href="bosses.html">Route des boss →</a></div><div class="adventure-goal-grid"><label class="adventure-goal" data-goal-card="company-boss-lich">
+<input type="checkbox" data-scope="company" data-goal="company-boss-lich">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Liche du Crépuscule</strong><small>Vaincue par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-minoshroom">
+<input type="checkbox" data-scope="company" data-goal="company-boss-minoshroom">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Minoshroom</strong><small>Vaincu par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-hydra">
+<input type="checkbox" data-scope="company" data-goal="company-boss-hydra">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Hydre</strong><small>Vaincue par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-knight-phantom">
+<input type="checkbox" data-scope="company" data-goal="company-boss-knight-phantom">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Chevaliers fantômes</strong><small>Rencontre terminée par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-ur-ghast">
+<input type="checkbox" data-scope="company" data-goal="company-boss-ur-ghast">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Ur-Ghast</strong><small>Vaincu par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-alpha-yeti">
+<input type="checkbox" data-scope="company" data-goal="company-boss-alpha-yeti">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Alpha Yeti</strong><small>Vaincu par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-snow-queen">
+<input type="checkbox" data-scope="company" data-goal="company-boss-snow-queen">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Reine des Neiges</strong><small>Vaincue par la compagnie.</small></span>
+</label><label class="adventure-goal" data-goal-card="company-boss-vaelorn">
+<input type="checkbox" data-scope="company" data-goal="company-boss-vaelorn">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<span class="goal-copy"><strong>Vaelorn, Roi de Cendres</strong><small>Vaincu par la compagnie.</small></span>
+</label></div></section>
+<section class="adventure-section"><div class="adventure-section-head"><div><p class="page-kicker">Chapitre IX</p><h2>Les Six Épreuves</h2></div><a href="quests.html">Voir les quêtes →</a></div><div class="adventure-goal-grid three-column"><label class="adventure-goal icon-goal" data-goal-card="company-trial-braise">
+<input type="checkbox" data-scope="company" data-goal="company-trial-braise">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/sceau_braise.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Épreuve de la Braise</strong><small>Sceau de la Braise obtenu.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-trial-gardien">
+<input type="checkbox" data-scope="company" data-goal="company-trial-gardien">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/sceau_gardien.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Épreuve du Gardien</strong><small>Sceau du Gardien obtenu.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-trial-horizon">
+<input type="checkbox" data-scope="company" data-goal="company-trial-horizon">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/sceau_horizon.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Épreuve de l’Horizon</strong><small>Sceau de l’Horizon obtenu.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-trial-memoire">
+<input type="checkbox" data-scope="company" data-goal="company-trial-memoire">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/sceau_memoire.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Épreuve de la Mémoire</strong><small>Sceau de la Mémoire obtenu.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-trial-rempart">
+<input type="checkbox" data-scope="company" data-goal="company-trial-rempart">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/sceau_rempart.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Épreuve du Rempart</strong><small>Sceau du Rempart obtenu.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-trial-volonte">
+<input type="checkbox" data-scope="company" data-goal="company-trial-volonte">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/sceau_volonte.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Épreuve de la Volonté</strong><small>Sceau de la Volonté obtenu.</small></span>
+</label></div></section>
+<section class="adventure-section company-final-section"><div class="adventure-section-head"><div><p class="page-kicker">Dernier Miracle</p><h2>Vaelorn et le destin du ciel</h2></div><span class="spoiler-badge">SPOILERS MAJEURS</span></div>
+<div class="adventure-goal-grid two-column"><label class="adventure-goal icon-goal" data-goal-card="company-shard">
+<input type="checkbox" data-scope="company" data-goal="company-shard">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/eclat_septieme_miracle.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Éclat du Septième Miracle</strong><small>La compagnie a réuni les six sceaux et reçu l’Éclat.</small></span>
+</label><label class="adventure-goal icon-goal" data-goal-card="company-vaelorn-proof">
+<input type="checkbox" data-scope="company" data-goal="company-vaelorn-proof">
+<span class="adventure-checkmark" aria-hidden="true"></span>
+<img src="assets/items/preuve_vaelorn.png" alt="" class="adventure-goal-icon">
+<span class="goal-copy"><strong>Preuve de Vaelorn</strong><small>La validation coopérative finale est enregistrée.</small></span>
+</label></div>
+<div class="spoiler-locked" data-spoiler-lock><img src="assets/items/preuve_vaelorn.png" alt=""><div><strong>La fin commune est masquée.</strong><p>Active le mode spoilers pour enregistrer le choix irréversible de la compagnie.</p></div></div>
+<div class="ending-picker" data-spoiler-content hidden>
+<label><input type="radio" name="adventure-ending" value="sealed"><img src="assets/items/sceau_ciel_ferme.png" alt=""><span><strong>Sceller le ciel</strong><small>Première conclusion irréversible.</small></span></label>
+<label><input type="radio" name="adventure-ending" value="opened"><img src="assets/items/sceau_ciel_ouvert.png" alt=""><span><strong>Ouvrir le ciel</strong><small>Seconde conclusion irréversible.</small></span></label>
+</div></section>
+</div>
 
-<section class="adventure-section" id="adventure-proofs">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Registre vérifié</p><h2>Les quatre preuves</h2></div>
-    <a href="bosses.html">Comprendre les preuves →</a>
-  </div>
-  <div class="adventure-goal-grid four-column">
-        <label class="adventure-goal icon-goal proof-goal" data-goal-card="proof-mowzie">
-          <input type="checkbox" data-goal="proof-mowzie">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <img src="assets/items/preuve_mowzie.png" alt="" class="adventure-goal-icon">
-          <span class="goal-copy">
-            <strong>Légende de Mowzie</strong>
-            <small>Vaincre un gardien reconnu de Mowzie’s Mobs.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal icon-goal proof-goal" data-goal-card="proof-cataclysm">
-          <input type="checkbox" data-goal="proof-cataclysm">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <img src="assets/items/preuve_cataclysm.png" alt="" class="adventure-goal-icon">
-          <span class="goal-copy">
-            <strong>Premier Cataclysme</strong>
-            <small>Vaincre un boss reconnu de Cataclysm.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal icon-goal proof-goal" data-goal-card="proof-naga">
-          <input type="checkbox" data-goal="proof-naga">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <img src="assets/items/preuve_naga.png" alt="" class="adventure-goal-icon">
-          <span class="goal-copy">
-            <strong>Trophée de la Naga</strong>
-            <small>Vaincre la Naga dans la Forêt du Crépuscule.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal icon-goal proof-goal" data-goal-card="proof-dragon">
-          <input type="checkbox" data-goal="proof-dragon">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <img src="assets/items/preuve_dragon.png" alt="" class="adventure-goal-icon">
-          <span class="goal-copy">
-            <strong>Sceau du Dragon</strong>
-            <small>Vaincre le Dragon de l’End.</small>
-          </span>
-        </label>
-        </div>
+<section class="adventure-tools hybrid-tools">
+<div><p class="page-kicker">Sauvegarde et synchronisation</p><h2>Une structure prête pour Minecraft</h2><p>L’import accepte les exports V4.0, V4.1 et le futur schéma KubeJS. La synchronisation automatique sera ajoutée après validation de cette séparation.</p></div>
+<div class="adventure-tool-buttons">
+<button class="button secondary" id="export-all" type="button">Exporter tout</button>
+<button class="button secondary" id="export-personal" type="button">Exporter joueur</button>
+<button class="button secondary" id="export-company" type="button">Exporter compagnie</button>
+<label class="button secondary import-button">Importer<input id="import-adventure" type="file" accept="application/json,.json"></label>
+<button class="button danger-button" id="reset-adventure" type="button">Réinitialiser</button>
+</div>
 </section>
-
-<section class="adventure-section" id="adventure-expeditions">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Exploration</p><h2>Expéditions majeures</h2></div>
-    <a href="systems.html">Voir les systèmes →</a>
-  </div>
-  <div class="adventure-goal-grid">
-        <label class="adventure-goal expedition-goal" data-goal-card="expedition-nether">
-          <input type="checkbox" data-goal="expedition-nether">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Nether</strong>
-            <small>Établir une route sûre et trouver les structures expertes.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal expedition-goal" data-goal-card="expedition-twilight">
-          <input type="checkbox" data-goal="expedition-twilight">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Forêt du Crépuscule</strong>
-            <small>Ouvrir le portail et commencer la route des trophées.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal expedition-goal" data-goal-card="expedition-end">
-          <input type="checkbox" data-goal="expedition-end">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>End</strong>
-            <small>Atteindre l’End, vaincre le Dragon et explorer les îles.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal expedition-goal" data-goal-card="expedition-aquamirae">
-          <input type="checkbox" data-goal="expedition-aquamirae">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Océans gelés d’Aquamirae</strong>
-            <small>Préparer respiration, mobilité et résistance au froid.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal expedition-goal" data-goal-card="expedition-stalwart">
-          <input type="checkbox" data-goal="expedition-stalwart">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Forteresses Stalwart</strong>
-            <small>Trouver leurs gardiens dans de nouveaux chunks.</small>
-          </span>
-        </label>
-        </div>
-</section>
-
-<section class="adventure-section" id="adventure-bosses">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Chasseurs de Miracles</p><h2>Rencontres majeures</h2></div>
-    <a href="bosses.html">Ouvrir la route des boss →</a>
-  </div>
-  <div class="adventure-goal-grid">
-        <label class="adventure-goal boss-goal" data-goal-card="boss-lich">
-          <input type="checkbox" data-goal="boss-lich">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Liche du Crépuscule</strong>
-            <small>Poursuivre la progression après la Naga.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-minoshroom">
-          <input type="checkbox" data-goal="boss-minoshroom">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Minoshroom</strong>
-            <small>Traverser le labyrinthe et récupérer son trophée.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-hydra">
-          <input type="checkbox" data-goal="boss-hydra">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Hydre</strong>
-            <small>Survivre aux têtes multiples et à son souffle.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-knight-phantom">
-          <input type="checkbox" data-goal="boss-knight-phantom">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Chevaliers fantômes</strong>
-            <small>Terminer la rencontre des cryptes.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-ur-ghast">
-          <input type="checkbox" data-goal="boss-ur-ghast">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Ur-Ghast</strong>
-            <small>Atteindre le sommet de la tour sombre.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-alpha-yeti">
-          <input type="checkbox" data-goal="boss-alpha-yeti">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Alpha Yeti</strong>
-            <small>Dominer les terres enneigées.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-snow-queen">
-          <input type="checkbox" data-goal="boss-snow-queen">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Reine des Neiges</strong>
-            <small>Achever la route glacée du Crépuscule.</small>
-          </span>
-        </label>
-        
-        <label class="adventure-goal boss-goal" data-goal-card="boss-vaelorn">
-          <input type="checkbox" data-goal="boss-vaelorn">
-          <span class="adventure-checkmark" aria-hidden="true"></span>
-          <span class="goal-copy">
-            <strong>Vaelorn, Roi de Cendres</strong>
-            <small>Conclure la campagne en solo ou en coopération.</small>
-          </span>
-        </label>
-        </div>
-</section>
-
-<section class="adventure-section" id="adventure-trials">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Chapitre IX</p><h2>Les Six Épreuves</h2></div>
-    <a href="quests.html#epreuves_miracles">Voir les quêtes →</a>
-  </div>
-  <div class="adventure-goal-grid three-column">
-    <label class="adventure-goal trial-goal" data-goal-card="trial-braise">
-      <input type="checkbox" data-goal="trial-braise">
-      <span class="adventure-checkmark" aria-hidden="true"></span>
-      <img src="assets/items/sceau_braise.png" alt="" class="adventure-goal-icon">
-      <span class="goal-copy">
-        <strong>Épreuve de la Braise</strong>
-        <small>Récompense : Sceau de la Braise</small>
-      </span>
-    </label>
-    
-    <label class="adventure-goal trial-goal" data-goal-card="trial-gardien">
-      <input type="checkbox" data-goal="trial-gardien">
-      <span class="adventure-checkmark" aria-hidden="true"></span>
-      <img src="assets/items/sceau_gardien.png" alt="" class="adventure-goal-icon">
-      <span class="goal-copy">
-        <strong>Épreuve du Gardien</strong>
-        <small>Récompense : Sceau du Gardien</small>
-      </span>
-    </label>
-    
-    <label class="adventure-goal trial-goal" data-goal-card="trial-horizon">
-      <input type="checkbox" data-goal="trial-horizon">
-      <span class="adventure-checkmark" aria-hidden="true"></span>
-      <img src="assets/items/sceau_horizon.png" alt="" class="adventure-goal-icon">
-      <span class="goal-copy">
-        <strong>Épreuve de l’Horizon</strong>
-        <small>Récompense : Sceau de l’Horizon</small>
-      </span>
-    </label>
-    
-    <label class="adventure-goal trial-goal" data-goal-card="trial-memoire">
-      <input type="checkbox" data-goal="trial-memoire">
-      <span class="adventure-checkmark" aria-hidden="true"></span>
-      <img src="assets/items/sceau_memoire.png" alt="" class="adventure-goal-icon">
-      <span class="goal-copy">
-        <strong>Épreuve de la Mémoire</strong>
-        <small>Récompense : Sceau de la Mémoire</small>
-      </span>
-    </label>
-    
-    <label class="adventure-goal trial-goal" data-goal-card="trial-rempart">
-      <input type="checkbox" data-goal="trial-rempart">
-      <span class="adventure-checkmark" aria-hidden="true"></span>
-      <img src="assets/items/sceau_rempart.png" alt="" class="adventure-goal-icon">
-      <span class="goal-copy">
-        <strong>Épreuve du Rempart</strong>
-        <small>Récompense : Sceau du Rempart</small>
-      </span>
-    </label>
-    
-    <label class="adventure-goal trial-goal" data-goal-card="trial-volonte">
-      <input type="checkbox" data-goal="trial-volonte">
-      <span class="adventure-checkmark" aria-hidden="true"></span>
-      <img src="assets/items/sceau_volonte.png" alt="" class="adventure-goal-icon">
-      <span class="goal-copy">
-        <strong>Épreuve de la Volonté</strong>
-        <small>Récompense : Sceau de la Volonté</small>
-      </span>
-    </label>
-    </div>
-</section>
-
-<section class="adventure-section final-destiny" id="adventure-ending">
-  <div class="adventure-section-head">
-    <div><p class="page-kicker">Chapitre X</p><h2>Le choix du ciel</h2></div>
-    <span class="spoiler-badge">SPOILERS MAJEURS</span>
-  </div>
-
-  <div class="spoiler-locked" data-spoiler-lock>
-    <img src="assets/items/preuve_vaelorn.png" alt="">
-    <div><strong>Le destin final est masqué.</strong><p>Active le mode spoilers pour enregistrer la fin choisie après Vaelorn.</p></div>
-  </div>
-
-  <div class="ending-picker" data-spoiler-content hidden>
-    <label>
-      <input type="radio" name="adventure-ending" value="sealed">
-      <img src="assets/items/sceau_ciel_ferme.png" alt="">
-      <span><strong>Sceller le ciel</strong><small>Enregistrer la première conclusion irréversible.</small></span>
-    </label>
-    <label>
-      <input type="radio" name="adventure-ending" value="opened">
-      <img src="assets/items/sceau_ciel_ouvert.png" alt="">
-      <span><strong>Ouvrir le ciel</strong><small>Enregistrer la seconde conclusion irréversible.</small></span>
-    </label>
-  </div>
-</section>
-
-<section class="adventure-tools">
-  <div>
-    <p class="page-kicker">Sauvegarde</p>
-    <h2>Garder ou transférer ta progression</h2>
-    <p>Les données ne quittent jamais ton navigateur. Tu peux toutefois exporter un fichier JSON pour changer d’appareil.</p>
-  </div>
-  <div class="adventure-tool-buttons">
-    <button class="button secondary" id="export-adventure" type="button">Exporter</button>
-    <label class="button secondary import-button">Importer<input id="import-adventure" type="file" accept="application/json,.json"></label>
-    <button class="button danger-button" id="reset-adventure" type="button">Tout réinitialiser</button>
-  </div>
-</section>
-
+<div class="migration-note" id="migration-note" hidden><strong>Progression V4.0 migrée</strong><span>Les anciennes cases ont été réparties entre le joueur et la compagnie sans perte.</span><button type="button" aria-label="Fermer">×</button></div>
 <div class="adventure-toast" id="adventure-toast" role="status" aria-live="polite"></div>
 </main>
-
-<footer><div class="footer-note"><span>ASCENSION: The Last Miracle</span><span>Mon aventure — V4.0 Alpha</span><span>Sauvegarde locale, sans compte</span></div></footer>
-<script src="assets/site.js"></script>
-<script src="assets/adventure.js"></script>
+<footer><div class="footer-note"><span>ASCENSION: The Last Miracle</span><span>Mon aventure — V4.1 Progression hybride</span><span>Données locales • Export JSON</span></div></footer>
+<script src="assets/site.js"></script><script src="assets/adventure.js"></script>
 </body></html>
