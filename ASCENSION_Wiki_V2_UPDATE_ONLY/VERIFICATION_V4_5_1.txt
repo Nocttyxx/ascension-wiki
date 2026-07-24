@@ -1,0 +1,14 @@
+ASCENSION Wiki V4.5.1 — Vérification
+=======================================
+
+Séparation des badges : OK
+Cartes de hauteur régulière : OK
+Actions sur deux lignes : OK
+Bouton paquet pleine largeur : OK
+Info-bulles Favori/Prêt : OK
+Responsive tablette/mobile : OK
+Sauvegardes V4.5 conservées : OK
+Syntaxe JavaScript : OK
+Liens locaux : OK
+
+OK : 20 HTML et 1 CSS vérifiés, aucun lien local manquant.
