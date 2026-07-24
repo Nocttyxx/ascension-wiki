@@ -7,36 +7,124 @@
 <link rel="icon" href="favicon.ico"><link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="adventure-page adventure-hybrid-page">
-<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v4.1 Progression hybride</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
+<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v4.1.1 Interface Fix</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
 
 <main data-adventure-root>
 <section class="adventure-hero hybrid-hero">
 <div class="adventure-hero-copy"><p class="eyebrow">Le Compagnon de l’Ascension</p><h1>Mon aventure</h1>
-<p class="lead">Deux progressions complémentaires : ton parcours personnel et l’histoire partagée de ta compagnie. Les données de la V4.0 sont migrées automatiquement.</p>
+<p class="lead">Une vue pour ton joueur et une vue pour toute l’équipe. Choisis simplement le bloc que tu veux ouvrir ; le wiki s’occupe des compteurs et de la sauvegarde.</p>
 <div class="badges"><span>Personnel + collectif</span><span>Migration V4.0</span><span>Export compatible sync</span><span>Solo fusionné</span></div></div>
 <div class="adventure-sigil"><img src="assets/modpack_icon_official.png" alt="Sceau d’ASCENSION"><span id="overall-percent">0%</span><small>progression combinée</small></div>
 </section>
 
-<section class="hybrid-dashboard">
-<article class="scope-progress personal-progress-card" data-open-scope="personal" tabindex="0">
-<div class="scope-card-head"><span class="scope-icon">✦</span><div><p class="page-kicker">Ma progression</p><h2 id="personal-title">Le porteur s’éveille</h2></div><strong id="personal-percent">0%</strong></div>
-<div class="adventure-progress-track"><span id="personal-bar"></span></div>
-<div class="scope-meta"><b id="personal-count">0/20</b><span>classe, préparation, exploration et participation</span></div>
-</article>
-<article class="scope-progress company-progress-card" data-open-scope="company" tabindex="0">
-<div class="scope-card-head"><span class="scope-icon">♜</span><div><p class="page-kicker">Progression de la compagnie</p><h2 id="company-title">La compagnie se rassemble</h2></div><strong id="company-percent">0%</strong></div>
-<div class="adventure-progress-track"><span id="company-bar"></span></div>
-<div class="scope-meta"><b id="company-count">0/31</b><span>chapitres, preuves, boss, Épreuves et fin</span></div>
-</article>
-<article class="adventure-next-panel hybrid-next"><p class="page-kicker">Prochain objectif</p><h2 id="next-objective">Choisir une classe</h2><p id="next-objective-detail">Définis ton rôle personnel.</p><button id="next-objective-button" class="button secondary" type="button">Ouvrir l’objectif</button></article>
+<section class="hybrid-explainer" aria-labelledby="hybrid-explainer-title">
+  <div class="hybrid-explainer-heading">
+    <div>
+      <p class="page-kicker">Comment ça fonctionne ?</p>
+      <h2 id="hybrid-explainer-title">Deux progressions, une seule aventure</h2>
+    </div>
+    <span class="hybrid-version-badge">V4.1.1</span>
+  </div>
+
+  <div class="hybrid-explainer-grid">
+    <article class="hybrid-explainer-item personal">
+      <span class="hybrid-step-number">1</span>
+      <div>
+        <strong>Ma progression personnelle</strong>
+        <p>Ta classe, ta préparation, tes découvertes et les boss auxquels tu as participé.</p>
+      </div>
+    </article>
+    <article class="hybrid-explainer-item company">
+      <span class="hybrid-step-number">2</span>
+      <div>
+        <strong>La progression de la compagnie</strong>
+        <p>Les chapitres, preuves, victoires principales, Six Épreuves et la fin commune.</p>
+      </div>
+    </article>
+  </div>
+
+  <p class="hybrid-solo-rule"><strong>En solo :</strong> utilise simplement les deux vues. La partie personnelle parle de ton personnage ; la partie compagnie représente ta sauvegarde solo.</p>
+</section>
+
+<section class="hybrid-dashboard" aria-label="Résumé de la progression">
+  <article class="scope-progress personal-progress-card" data-open-scope="personal" tabindex="0" role="button" aria-label="Ouvrir ma progression personnelle">
+    <div class="scope-card-top">
+      <div class="scope-card-identity">
+        <span class="scope-icon">✦</span>
+        <div><p class="page-kicker">Progression personnelle</p><h2>Ma progression</h2></div>
+      </div>
+      <strong class="scope-percent" id="personal-percent">0%</strong>
+    </div>
+    <p class="scope-description">Uniquement ce que <strong>toi</strong>, le joueur, as accompli.</p>
+    <p class="scope-status" id="personal-title">Le porteur s’éveille</p>
+    <div class="adventure-progress-track" aria-label="Progression personnelle"><span id="personal-bar"></span></div>
+    <div class="scope-meta">
+      <div class="scope-count-copy"><b id="personal-count">0 / 20</b><span>objectifs personnels accomplis</span></div>
+      <span class="scope-open-button">Ouvrir ma progression <b>→</b></span>
+    </div>
+  </article>
+
+  <article class="scope-progress company-progress-card" data-open-scope="company" tabindex="0" role="button" aria-label="Ouvrir la progression de ma compagnie">
+    <div class="scope-card-top">
+      <div class="scope-card-identity">
+        <span class="scope-icon">♜</span>
+        <div><p class="page-kicker">Progression collective</p><h2>Ma compagnie</h2></div>
+      </div>
+      <strong class="scope-percent" id="company-percent">0%</strong>
+    </div>
+    <p class="scope-description">Tout ce que <strong>l’équipe entière</strong> a validé ensemble.</p>
+    <p class="scope-status" id="company-title">La compagnie se rassemble</p>
+    <div class="adventure-progress-track" aria-label="Progression de la compagnie"><span id="company-bar"></span></div>
+    <div class="scope-meta">
+      <div class="scope-count-copy"><b id="company-count">0 / 31</b><span>objectifs collectifs accomplis</span></div>
+      <span class="scope-open-button">Ouvrir ma compagnie <b>→</b></span>
+    </div>
+  </article>
+
+  <article class="adventure-next-panel hybrid-next">
+    <p class="page-kicker">Prochain objectif conseillé</p>
+    <h2 id="next-objective">Choisir une classe</h2>
+    <p id="next-objective-detail">Définis ton rôle personnel.</p>
+    <button id="next-objective-button" class="button secondary" type="button">Afficher cet objectif</button>
+  </article>
+</section>
+
+<section class="legacy-recovery" id="legacy-recovery" hidden>
+  <div class="legacy-recovery-icon">↺</div>
+  <div>
+    <p class="page-kicker">Récupération V4.0</p>
+    <h2>Tu avais déjà une progression ?</h2>
+    <p>Sélectionne ton export JSON V4.0. La classe ira dans « Ma progression » et les chapitres, preuves, boss et Épreuves iront dans « Ma compagnie ».</p>
+  </div>
+  <div class="legacy-recovery-actions">
+    <label class="button">Récupérer ma sauvegarde V4.0<input id="legacy-import-adventure" type="file" accept="application/json,.json"></label>
+    <button class="button secondary" id="legacy-recovery-dismiss" type="button">Commencer à zéro</button>
+  </div>
 </section>
 
 <section class="hybrid-mode-panel">
-<div class="hybrid-tabs" role="tablist" aria-label="Type de progression">
-<button class="hybrid-tab active" id="tab-personal" type="button" role="tab" aria-selected="true" aria-controls="panel-personal" data-tab="personal"><span>✦</span><b>Ma progression</b><small>Ce que j’ai personnellement accompli</small></button>
-<button class="hybrid-tab" id="tab-company" type="button" role="tab" aria-selected="false" aria-controls="panel-company" data-tab="company"><span>♜</span><b>Ma compagnie</b><small>Ce que l’équipe a validé ensemble</small></button>
-</div>
-<div class="hybrid-save-line"><span id="save-status">Sauvegarde locale prête.</span><label class="spoiler-switch"><input id="spoiler-toggle" type="checkbox"><span></span><b>Mode spoilers</b></label></div>
+  <div class="hybrid-mode-heading">
+    <div><p class="page-kicker">Choisir la vue à modifier</p><h2>Quelle progression veux-tu ouvrir ?</h2></div>
+    <span class="hybrid-active-hint">Sauvegarde automatique</span>
+  </div>
+
+  <div class="hybrid-tabs" role="tablist" aria-label="Type de progression">
+    <button class="hybrid-tab active" id="tab-personal" type="button" role="tab" aria-selected="true" aria-controls="panel-personal" data-tab="personal">
+      <span class="hybrid-tab-number">1</span>
+      <span class="hybrid-tab-copy"><b>Ma progression personnelle</b><small>Classe, préparation, exploration et participation</small></span>
+      <span class="hybrid-tab-arrow">→</span>
+    </button>
+    <button class="hybrid-tab" id="tab-company" type="button" role="tab" aria-selected="false" aria-controls="panel-company" data-tab="company">
+      <span class="hybrid-tab-number">2</span>
+      <span class="hybrid-tab-copy"><b>Progression de la compagnie</b><small>Chapitres, preuves, boss, Épreuves et fin commune</small></span>
+      <span class="hybrid-tab-arrow">→</span>
+    </button>
+  </div>
+
+  <div class="hybrid-save-line">
+    <span id="save-status">Sauvegarde locale prête.</span>
+    <label class="spoiler-switch"><input id="spoiler-toggle" type="checkbox"><span></span><b>Mode spoilers</b></label>
+  </div>
 </section>
 
 <div class="hybrid-pane active" id="panel-personal" role="tabpanel" aria-labelledby="tab-personal" data-pane="personal">

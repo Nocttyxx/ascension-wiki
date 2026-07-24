@@ -1,0 +1,7 @@
+ASCENSION Wiki V4.1.1
+JavaScript : OK
+Liens locaux : OK
+Interface personnelle : OK
+Interface compagnie : OK
+Import JSON V4.0 : OK
+Sauvegarde séparée : OK

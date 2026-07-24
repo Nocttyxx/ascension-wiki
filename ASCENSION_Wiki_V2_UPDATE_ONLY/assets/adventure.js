@@ -3,7 +3,9 @@
 const root = document.querySelector('[data-adventure-root]');
 if (!root) return;
 
-const STORAGE_KEY = 'ascension.adventure.v4';
+const STORAGE_KEY = 'ascension.adventure.hybrid.v2';
+const LEGACY_STORAGE_KEY = 'ascension.adventure.v4';
+const LEGACY_BACKUP_KEY = 'ascension.adventure.v4.backup';
 const SCHEMA = 'ascension-wiki-progress';
 const VERSION = 2;
 const personalInputs = [...root.querySelectorAll('[data-scope="personal"][data-goal]')];
@@ -19,6 +21,9 @@ const toast = document.getElementById('adventure-toast');
 const migrationNote = document.getElementById('migration-note');
 const tabs = [...root.querySelectorAll('[data-tab]')];
 const panes = [...root.querySelectorAll('[data-pane]')];
+const recoveryPanel = document.getElementById('legacy-recovery');
+const legacyImportInput = document.getElementById('legacy-import-adventure');
+const legacyRecoveryDismiss = document.getElementById('legacy-recovery-dismiss');
 
 const personalIds = new Set(personalInputs.map(i => i.dataset.goal));
 const companyIds = new Set(companyInputs.map(i => i.dataset.goal));
@@ -95,8 +100,21 @@ function sanitize(raw){
 }
 
 function load(){
-  try { const raw=localStorage.getItem(STORAGE_KEY); return raw ? sanitize(JSON.parse(raw)) : {state:defaults(),migrated:false}; }
-  catch(e){ console.warn(e); return {state:defaults(),migrated:false}; }
+  try {
+    const current = localStorage.getItem(STORAGE_KEY);
+    if (current) return {...sanitize(JSON.parse(current)), recoveredLegacyKey:false};
+
+    const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+    if (legacy) {
+      if (!localStorage.getItem(LEGACY_BACKUP_KEY)) localStorage.setItem(LEGACY_BACKUP_KEY, legacy);
+      return {...sanitize(JSON.parse(legacy)), recoveredLegacyKey:true};
+    }
+
+    return {state:defaults(),migrated:false,recoveredLegacyKey:false};
+  } catch(e) {
+    console.warn(e);
+    return {state:defaults(),migrated:false,recoveredLegacyKey:false};
+  }
 }
 let loaded = load();
 let state = loaded.state;
@@ -122,7 +140,7 @@ function apply(){
   companyInputs.forEach(i=>i.checked=state.company.completed.includes(i.dataset.goal));
   tabs.forEach(tab=>{ const active=tab.dataset.tab===state.ui.activeTab; tab.classList.toggle('active',active); tab.setAttribute('aria-selected',String(active)); });
   panes.forEach(pane=>{ const active=pane.dataset.pane===state.ui.activeTab; pane.hidden=!active; pane.classList.toggle('active',active); });
-  updateSpoilers(); updateDashboard();
+  updateSpoilers(); updateDashboard(); updateRecoveryPanel();
 }
 function sync(){
   state.profile.playerName=playerName.value.trim(); state.profile.className=classInputs.find(i=>i.checked)?.value||''; state.profile.spoilers=spoilerToggle.checked;
@@ -131,6 +149,17 @@ function sync(){
   persist(); updateSpoilers(); updateDashboard();
 }
 function updateSpoilers(){ root.querySelectorAll('[data-spoiler-lock]').forEach(el=>el.hidden=state.profile.spoilers); root.querySelectorAll('[data-spoiler-content]').forEach(el=>el.hidden=!state.profile.spoilers); }
+function hasProgress(){
+  return Boolean(
+    state.profile.className || state.profile.playerName ||
+    state.company.name || state.company.teamId || state.company.ending ||
+    state.personal.completed.length || state.company.completed.length
+  );
+}
+function updateRecoveryPanel(){
+  if (!recoveryPanel) return;
+  recoveryPanel.hidden = hasProgress() || recoveryPanel.dataset.dismissed === 'true';
+}
 function pct(done,total){ return total ? Math.round(done/total*100) : 0; }
 function titleFor(percent,scope){
   if(scope==='personal') return percent===0?'Le porteur s’éveille':percent<30?'Les premiers pas':percent<60?'L’aventurier se forge':percent<100?'Le porteur s’élève':'Maîtrise personnelle';
@@ -147,8 +176,8 @@ function updateDashboard(){
   const pDone=state.personal.completed.length+(state.profile.className?1:0), pTotal=personalInputs.length+1;
   const cDone=state.company.completed.length+(state.company.ending?1:0), cTotal=companyInputs.length+1;
   const p=pct(pDone,pTotal), c=pct(cDone,cTotal), overall=pct(pDone+cDone,pTotal+cTotal);
-  document.getElementById('personal-percent').textContent=p+'%'; document.getElementById('personal-bar').style.width=p+'%'; document.getElementById('personal-count').textContent=pDone+'/'+pTotal; document.getElementById('personal-title').textContent=titleFor(p,'personal');
-  document.getElementById('company-percent').textContent=c+'%'; document.getElementById('company-bar').style.width=c+'%'; document.getElementById('company-count').textContent=cDone+'/'+cTotal; document.getElementById('company-title').textContent=titleFor(c,'company');
+  document.getElementById('personal-percent').textContent=p+'%'; document.getElementById('personal-bar').style.width=p+'%'; document.getElementById('personal-count').textContent=pDone+' / '+pTotal; document.getElementById('personal-title').textContent=titleFor(p,'personal');
+  document.getElementById('company-percent').textContent=c+'%'; document.getElementById('company-bar').style.width=c+'%'; document.getElementById('company-count').textContent=cDone+' / '+cTotal; document.getElementById('company-title').textContent=titleFor(c,'company');
   document.getElementById('overall-percent').textContent=overall+'%';
   document.getElementById('solo-mode-text').textContent=state.company.name ? 'Les validations collectives sont liées à « '+state.company.name+' ».' : 'Sans compagnie définie, tu peux utiliser les deux vues comme une partie solo.';
   let next=objectives.find(o=>o.special==='class'?!state.profile.className:o.special==='ending'?!state.company.ending:o.scope==='personal'?!state.personal.completed.includes(o.id):!state.company.completed.includes(o.id));
@@ -167,14 +196,28 @@ function download(mode){
   a.href=url; a.download=`ascension-${mode}-${base||'progression'}.json`; a.click(); URL.revokeObjectURL(url); say(mode==='all'?'Progression complète exportée.':mode==='personal'?'Progression du joueur exportée.':'Progression de la compagnie exportée.');
 }
 async function importFile(file){
-  if(!file)return; try{ const result=sanitize(JSON.parse(await file.text()));
-    // Les exports partiels fusionnent au lieu d’effacer l’autre vue.
+  if(!file)return;
+  try{
     const raw=JSON.parse(await file.text());
-    if(raw.version===2 && raw.personal && !raw.company){ state.profile=result.state.profile; state.personal=result.state.personal; }
-    else if(raw.version===2 && raw.company && !raw.personal && !raw.profile){ state.company=result.state.company; }
-    else state=result.state;
-    persist('Progression importée.'); apply(); say('Import réussi.');
-  }catch(e){console.error(e);say('Ce fichier de progression est invalide.');}
+    const result=sanitize(raw);
+
+    if(raw.version===2 && raw.personal && !raw.company){
+      state.profile=result.state.profile;
+      state.personal=result.state.personal;
+    } else if(raw.version===2 && raw.company && !raw.personal && !raw.profile){
+      state.company=result.state.company;
+    } else {
+      state=result.state;
+    }
+
+    if (recoveryPanel) recoveryPanel.hidden=true;
+    persist(raw.version===1 ? 'Sauvegarde V4.0 récupérée.' : 'Progression importée.');
+    apply();
+    say(raw.version===1 ? 'Sauvegarde V4.0 répartie avec succès.' : 'Import réussi.');
+  }catch(e){
+    console.error(e);
+    say('Ce fichier de progression est invalide.');
+  }
 }
 
 [...personalInputs,...companyInputs].forEach(i=>i.addEventListener('change',sync)); classInputs.forEach(i=>i.addEventListener('change',sync)); endingInputs.forEach(i=>i.addEventListener('change',sync));
@@ -184,8 +227,16 @@ root.querySelectorAll('[data-open-scope]').forEach(card=>{ const open=()=>activa
 document.getElementById('next-objective-button').addEventListener('click',()=>activateTab(nextTarget,true));
 document.getElementById('export-all').addEventListener('click',()=>download('all')); document.getElementById('export-personal').addEventListener('click',()=>download('personal')); document.getElementById('export-company').addEventListener('click',()=>download('company'));
 document.getElementById('import-adventure').addEventListener('change',e=>{importFile(e.target.files?.[0]);e.target.value='';});
+legacyImportInput?.addEventListener('change',e=>{importFile(e.target.files?.[0]);e.target.value='';});
+legacyRecoveryDismiss?.addEventListener('click',()=>{recoveryPanel.dataset.dismissed='true';recoveryPanel.hidden=true;say('Nouvelle progression prête.');});
 document.getElementById('reset-adventure').addEventListener('click',()=>{if(!confirm('Effacer les progressions personnelle et collective de ce navigateur ?'))return;state=defaults();persist('Progression réinitialisée.');apply();say('Progression réinitialisée.');});
 migrationNote.querySelector('button')?.addEventListener('click',()=>migrationNote.hidden=true);
 apply();
-if(loaded.migrated){ persist('Progression V4.0 migrée.'); migrationNote.hidden=false; }
+if(loaded.migrated){
+  persist('Progression V4.0 migrée.');
+  migrationNote.hidden=false;
+} else if(loaded.recoveredLegacyKey){
+  persist('Progression existante récupérée.');
+}
+updateRecoveryPanel();
 })();
