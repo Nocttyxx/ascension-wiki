@@ -1,0 +1,18 @@
+ASCENSION Wiki V4.0 Alpha — Vérification
+========================================
+
+OK — adventure.html présent
+OK — adventure.js présent
+OK — 33 jalons
+OK — choix final
+OK — sauvegarde locale
+OK — import/export
+OK — mode spoilers
+OK — navigation globale
+OK — syntaxe JavaScript
+OK — liens locaux
+
+Pages avec navigation : 19
+Jalons : 33 + 1 choix final = 34
+
+OK : 20 fichiers HTML/CSS vérifiés, aucun lien local manquant.
