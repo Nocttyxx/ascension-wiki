@@ -951,3 +951,484 @@ ul{color:var(--muted)}
   .minecraft-sync-steps{grid-template-columns:1fr}
   .minecraft-sync-panel{padding:20px}
 }
+
+
+/* ==========================================================================
+   ASCENSION Wiki V4.3 Alpha — Codex des Boss
+   ========================================================================== */
+
+.boss-codex-page nav a[href="bosses.html"]{
+  color:var(--gold);
+  border-color:rgba(231,187,100,.30);
+  background:rgba(231,187,100,.08);
+}
+.boss-codex-hero{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(220px,.45fr);
+  align-items:center;
+  gap:30px;
+  min-height:350px;
+  margin-bottom:24px;
+  padding:40px;
+  border:1px solid rgba(231,187,100,.20);
+  border-radius:28px;
+  background:
+    linear-gradient(104deg,rgba(8,9,12,.96),rgba(24,15,14,.76)),
+    url("menu_background_official.png") center 44%/cover no-repeat;
+  box-shadow:var(--shadow);
+}
+.boss-codex-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 82% 48%,rgba(185,72,63,.18),transparent 25rem);
+}
+.boss-codex-hero>div{position:relative;z-index:1}
+.boss-codex-progress{
+  display:grid;
+  justify-items:center;
+  text-align:center;
+}
+.boss-codex-progress img{
+  width:145px;
+  height:145px;
+  object-fit:contain;
+  image-rendering:pixelated;
+  filter:drop-shadow(0 25px 35px rgba(0,0,0,.56));
+}
+.boss-codex-progress strong{
+  margin-top:-20px;
+  padding:7px 16px;
+  border-radius:999px;
+  border:1px solid rgba(231,187,100,.34);
+  background:rgba(7,8,11,.94);
+  color:var(--gold);
+  font-size:1.8rem;
+}
+.boss-codex-progress span{margin-top:8px;color:var(--ash)}
+
+.boss-route,.boss-codex-controls{
+  margin:22px 0;
+  padding:24px;
+  border:1px solid rgba(231,187,100,.14);
+  border-radius:22px;
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  box-shadow:var(--shadow);
+}
+.boss-section-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+}
+.boss-section-heading h2{margin:.08em 0}
+.boss-route-track{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:9px;
+  margin-top:20px;
+}
+.boss-route-track button{
+  position:relative;
+  display:grid;
+  justify-items:start;
+  min-height:128px;
+  padding:15px;
+  border:1px solid rgba(231,187,100,.10);
+  border-radius:15px;
+  color:var(--ivory);
+  background:rgba(255,255,255,.022);
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  transition:.18s ease;
+}
+.boss-route-track button::after{
+  content:"";
+  position:absolute;
+  top:35px;
+  left:calc(100% + 2px);
+  width:7px;
+  border-top:1px dashed rgba(231,187,100,.25);
+}
+.boss-route-track button:last-child::after{display:none}
+.boss-route-track button:hover{
+  transform:translateY(-3px);
+  border-color:rgba(231,187,100,.34);
+  background:rgba(231,187,100,.055);
+}
+.boss-route-track button>span{
+  display:grid;
+  place-items:center;
+  width:35px;
+  height:35px;
+  margin-bottom:12px;
+  border-radius:50%;
+  color:#1a100b;
+  background:linear-gradient(180deg,#f0cf86,#a96731);
+  font-weight:900;
+}
+.boss-route-track strong{font-size:.92rem}
+.boss-route-track small{margin-top:5px;color:var(--ash);line-height:1.35}
+
+.boss-codex-controls{
+  display:grid;
+  grid-template-columns:minmax(260px,1fr) auto auto;
+  align-items:center;
+  gap:15px;
+  position:sticky;
+  top:78px;
+  z-index:25;
+  backdrop-filter:blur(16px);
+  background:rgba(16,17,22,.94);
+}
+.boss-search{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:9px;
+  min-height:48px;
+  padding:0 14px;
+  border:1px solid rgba(231,187,100,.17);
+  border-radius:12px;
+  background:#0b0c10;
+}
+.boss-search span{color:var(--gold);font-size:1.4rem}
+.boss-search input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--ivory);
+  font:inherit;
+}
+.boss-filter-row{display:flex;gap:7px;flex-wrap:wrap}
+.boss-filter{
+  min-height:39px;
+  padding:7px 11px;
+  border:1px solid rgba(231,187,100,.12);
+  border-radius:999px;
+  color:var(--ash);
+  background:rgba(255,255,255,.025);
+  font:inherit;
+  font-size:.76rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.boss-filter:hover,.boss-filter.active{
+  color:var(--gold);
+  border-color:rgba(231,187,100,.35);
+  background:rgba(231,187,100,.08);
+}
+.boss-view-summary{
+  display:grid;
+  min-width:90px;
+  text-align:right;
+}
+.boss-view-summary strong{color:var(--gold);font-size:1.35rem}
+.boss-view-summary span{color:var(--ash);font-size:.7rem}
+
+.boss-codex-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  scroll-margin-top:170px;
+}
+.boss-codex-card{
+  overflow:hidden;
+  min-width:0;
+  border:1px solid rgba(231,187,100,.11);
+  border-radius:19px;
+  background:linear-gradient(180deg,#15161c,#101116);
+  box-shadow:0 18px 44px rgba(0,0,0,.26);
+  transition:.2s ease;
+}
+.boss-codex-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(231,187,100,.31);
+  box-shadow:0 24px 52px rgba(0,0,0,.40);
+}
+.boss-codex-card.is-defeated{
+  border-color:rgba(112,190,108,.30);
+  background:linear-gradient(180deg,rgba(23,33,27,.98),#101316);
+}
+.boss-card-open{
+  display:block;
+  width:100%;
+  padding:0;
+  border:0;
+  color:inherit;
+  background:transparent;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+}
+.boss-card-image{
+  position:relative;
+  height:225px;
+  overflow:hidden;
+  background:#090a0d;
+}
+.boss-card-image::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:45%;
+  background:linear-gradient(transparent,rgba(10,11,14,.85));
+}
+.boss-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.35s ease;
+}
+.boss-codex-card:hover .boss-card-image img{transform:scale(1.035)}
+.boss-codex-card.is-locked .boss-card-image img{
+  filter:blur(11px) grayscale(.6) brightness(.45);
+  transform:scale(1.08);
+}
+.boss-tier{
+  position:absolute;
+  top:13px;
+  left:13px;
+  z-index:2;
+  padding:5px 8px;
+  border-radius:999px;
+  color:#17100b;
+  background:#dfb86b;
+  font-size:.66rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+.boss-tier.tier-4,.boss-tier.tier-5,.boss-tier.tier-6{
+  color:#f8e9e5;
+  background:#8f3933;
+}
+.boss-lock-icon{
+  position:absolute;
+  inset:50% auto auto 50%;
+  z-index:3;
+  transform:translate(-50%,-50%);
+  color:#e7bb64;
+  font-size:2.4rem;
+}
+.boss-card-body{padding:17px}
+.boss-card-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:13px;
+}
+.boss-card-heading p{
+  margin:0 0 4px;
+  color:var(--gold);
+  font-size:.67rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.boss-card-heading h2{
+  margin:0;
+  font-size:1.18rem;
+  line-height:1.22;
+}
+.boss-card-order{
+  color:rgba(231,187,100,.38);
+  font-size:.72rem;
+  font-weight:900;
+}
+.boss-card-location{
+  min-height:47px;
+  margin:12px 0;
+  color:var(--ash);
+  font-size:.84rem;
+  line-height:1.45;
+}
+.boss-card-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:9px;
+}
+.boss-status{
+  display:inline-flex;
+  align-items:center;
+  min-height:27px;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:.64rem;
+  font-weight:900;
+}
+.boss-status.defeated{color:#cce8c8;background:rgba(112,190,108,.12);border:1px solid rgba(112,190,108,.27)}
+.boss-status.participated{color:#bcd7ef;background:rgba(92,143,201,.12);border:1px solid rgba(92,143,201,.27)}
+.boss-status.proof{color:#ead59c;background:rgba(231,187,100,.10);border:1px solid rgba(231,187,100,.24)}
+.boss-status.synced{color:#c3d6d8;background:rgba(125,168,172,.09);border:1px solid rgba(125,168,172,.20)}
+.boss-status.manual{color:var(--ash);background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+.boss-status.spoiler{color:#e3aba2;background:rgba(185,72,63,.12);border:1px solid rgba(185,72,63,.27)}
+.boss-card-arrow{color:var(--gold);font-size:.75rem;font-weight:900}
+
+.boss-empty-state{
+  margin:25px 0;
+  padding:50px;
+  border:1px dashed rgba(231,187,100,.20);
+  border-radius:20px;
+  text-align:center;
+  color:var(--ash);
+}
+.boss-empty-state strong{color:var(--ivory);font-size:1.25rem}
+
+.boss-drawer-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:90;
+  background:rgba(0,0,0,.66);
+  backdrop-filter:blur(4px);
+}
+.boss-drawer-backdrop[hidden]{display:none}
+.boss-drawer{
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:100;
+  width:min(720px,94vw);
+  height:100vh;
+  overflow:auto;
+  padding:34px;
+  transform:translateX(105%);
+  transition:.28s cubic-bezier(.22,.61,.36,1);
+  border-left:1px solid rgba(231,187,100,.24);
+  background:
+    radial-gradient(circle at top right,rgba(185,72,63,.10),transparent 28rem),
+    #101116;
+  box-shadow:-30px 0 70px rgba(0,0,0,.48);
+}
+.boss-drawer.open{transform:translateX(0)}
+.boss-drawer-open{overflow:hidden}
+.boss-drawer-close{
+  position:sticky;
+  top:0;
+  float:right;
+  z-index:4;
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(231,187,100,.18);
+  border-radius:50%;
+  color:var(--ivory);
+  background:rgba(12,13,17,.90);
+  font-size:1.6rem;
+  cursor:pointer;
+}
+.boss-drawer-hero{
+  display:grid;
+  grid-template-columns:210px 1fr;
+  align-items:center;
+  gap:22px;
+  padding:30px 0 22px;
+}
+.boss-drawer-hero>img{
+  width:210px;
+  height:165px;
+  object-fit:cover;
+  border-radius:16px;
+  border:1px solid rgba(231,187,100,.17);
+  background:#08090b;
+}
+.boss-drawer-hero h2{
+  margin:.1em 0;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+}
+.boss-drawer-status{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:18px;
+  padding:13px;
+  border-radius:13px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(231,187,100,.09);
+}
+.boss-detail-section{
+  margin:13px 0;
+  padding:18px;
+  border-radius:15px;
+  border:1px solid rgba(231,187,100,.09);
+  background:rgba(255,255,255,.022);
+}
+.boss-detail-section h3{margin:0 0 8px;color:var(--gold)}
+.boss-detail-section p{margin:0;color:var(--ash)}
+.boss-detail-note{border-left:3px solid rgba(231,187,100,.42)}
+.boss-strategy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+.boss-drawer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0;
+}
+.boss-drawer-navigation{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding-top:18px;
+  border-top:1px solid rgba(231,187,100,.11);
+}
+.boss-drawer-navigation button{
+  padding:10px 13px;
+  border:1px solid rgba(231,187,100,.14);
+  border-radius:10px;
+  color:var(--gold);
+  background:rgba(231,187,100,.05);
+  font:inherit;
+  cursor:pointer;
+}
+.boss-drawer-navigation button:disabled{opacity:.3;cursor:not-allowed}
+.boss-drawer-locked{
+  display:grid;
+  justify-items:center;
+  min-height:70vh;
+  place-content:center;
+  text-align:center;
+}
+.boss-drawer-locked img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  filter:grayscale(1) brightness(.55);
+}
+.boss-drawer-locked h2{font-size:2rem}
+
+@media(max-width:1200px){
+  .boss-route-track{grid-template-columns:repeat(3,1fr)}
+  .boss-route-track button::after{display:none}
+  .boss-codex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .boss-codex-controls{grid-template-columns:1fr}
+  .boss-view-summary{text-align:left}
+}
+@media(max-width:760px){
+  .boss-codex-hero{grid-template-columns:1fr;padding:25px}
+  .boss-codex-progress{display:none}
+  .boss-route-track{grid-template-columns:1fr 1fr}
+  .boss-codex-grid{grid-template-columns:1fr}
+  .boss-codex-controls{position:relative;top:auto}
+  .boss-section-heading{flex-direction:column}
+  .boss-drawer{padding:23px}
+  .boss-drawer-hero{grid-template-columns:1fr}
+  .boss-drawer-hero>img{width:100%;height:230px}
+  .boss-strategy-grid{grid-template-columns:1fr}
+}
+@media(max-width:500px){
+  .boss-route-track{grid-template-columns:1fr}
+  .boss-card-image{height:205px}
+  .boss-drawer-status{align-items:stretch;flex-direction:column}
+  .boss-drawer-navigation{flex-direction:column}
+}

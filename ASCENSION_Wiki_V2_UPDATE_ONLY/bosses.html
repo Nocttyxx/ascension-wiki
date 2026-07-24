@@ -2,24 +2,89 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Wiki officiel du modpack ASCENSION: The Last Miracle">
-<title>Boss et preuves — ASCENSION: The Last Miracle</title>
+<meta name="description" content="Codex interactif des boss du modpack ASCENSION: The Last Miracle">
+<title>Codex des Boss — ASCENSION: The Last Miracle</title>
 <link rel="icon" href="favicon.ico"><link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v1.0.0 Finale</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
-<main>
-<p class="page-kicker">Chasseurs de Miracles</p><h1>Boss et preuves</h1><p class="lead">Quatre catégories de victoire sont enregistrées automatiquement. La preuve est donnée à tous les joueurs proches du boss, même si un seul porte le dernier coup.</p>
-<section class="stat-grid"><div><strong>64 blocs</strong><span>rayon des preuves ordinaires</span></div><div><strong>96 blocs</strong><span>rayon de Vaelorn</span></div><div><strong>4/4</strong><span>preuves avant le Registre complet</span></div><div><strong>1 seule</strong><span>preuve Cataclysm suffit</span></div></section>
-<div class="boss-grid">
-<article><img class="pixel-icon class-icon" src="assets/items/preuve_mowzie.png" alt=""><h2>Légende de Mowzie</h2><p>Une victoire sur l’un de ces gardiens valide la même preuve :</p><div class="chips"><span class="tag ">Frostmaw</span><span class="tag ">Ferrous Wroughtnaut</span><span class="tag ">Umvuthi</span><span class="tag ">Umvuthana Raptor</span></div></article>
-<article><img class="pixel-icon class-icon" src="assets/items/preuve_cataclysm.png" alt=""><h2>Premier Cataclysme</h2><p>Un seul boss reconnu suffit pour la preuve :</p><div class="chips"><span class="tag ">Netherite Monstrosity</span><span class="tag ">Ender Guardian</span><span class="tag ">Ignis</span><span class="tag ">The Harbinger</span><span class="tag ">Ancient Remnant</span><span class="tag ">Maledictus</span><span class="tag ">The Leviathan</span><span class="tag ">Scylla</span></div></article>
-<article><img class="pixel-icon class-icon" src="assets/items/preuve_naga.png" alt=""><h2>Naga</h2><p>La Naga de Twilight Forest protège une archive. Sa défaite donne automatiquement le Trophée de la Naga.</p></article>
-<article><img class="pixel-icon class-icon" src="assets/items/preuve_dragon.png" alt=""><h2>Dragon de l’End</h2><p>Tous les joueurs présents dans l’arène reçoivent le Sceau du Dragon à sa mort.</p></article>
-</div>
-<h2>Route de difficulté recommandée</h2><div class="timeline"><div class="timeline-step"><span>1</span><div><h2>Préparation</h2><p>Donjons YUNG, When Dungeons Arise, Champions ordinaires et premiers monstres de Mowzie.</p></div></div><div class="timeline-step"><span>2</span><div><h2>Twilight Forest</h2><p>Naga → Lich → Minoshroom → Hydra → Knight Phantom → Ur-Ghast → Alpha Yeti → Snow Queen → Troll Caves / Giants.</p></div></div><div class="timeline-step"><span>3</span><div><h2>Aquamirae</h2><p>Prépare respiration, résistance et mobilité avant le contenu majeur des océans gelés.</p></div></div><div class="timeline-step"><span>4</span><div><h2>Nether Expert</h2><p>Recherche les forteresses Stalwart dans de nouveaux chunks et affronte leurs gardiens.</p></div></div><div class="timeline-step"><span>5</span><div><h2>Endgame</h2><p>Dragon, structures de l’End, Cataclysm avancé, Six Épreuves et Vaelorn.</p></div></div></div>
-<div class="notice"><strong>Récupération :</strong> <code>/ascensionproofrecover</code> redonne les preuves déjà enregistrées. Les opérateurs disposent de <code>/ascensionproof &lt;mowzie|cataclysm|naga|dragon&gt;</code> en dernier recours.</div>
+<body class="boss-codex-page">
+<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — V4.3 Alpha</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
+
+<main data-boss-codex>
+<section class="boss-codex-hero">
+  <div>
+    <p class="eyebrow">V4.3 Alpha — Chasseurs de Miracles</p>
+    <h1>Codex des Boss</h1>
+    <p class="lead">Explore la route complète des rencontres majeures, ouvre leurs fiches et retrouve automatiquement les victoires enregistrées dans « Mon aventure ».</p>
+    <div class="badges">
+      <span id="boss-total-badge">33 rencontres</span>
+      <span>6 paliers</span>
+      <span>Solo & coop</span>
+      <span>Synchronisation V4.2</span>
+    </div>
+  </div>
+  <div class="boss-codex-progress">
+    <img src="assets/items/preuve_cataclysm.png" alt="">
+    <strong id="boss-codex-percent">0%</strong>
+    <span id="boss-codex-count">0 / 33 vaincus</span>
+  </div>
+</section>
+
+<section class="boss-route" aria-labelledby="boss-route-title">
+  <div class="boss-section-heading">
+    <div><p class="page-kicker">Route recommandée</p><h2 id="boss-route-title">Du premier gardien au Roi de Cendres</h2></div>
+    <a href="progression.html">Voir la campagne complète →</a>
+  </div>
+  <div class="boss-route-track">
+    <button type="button" data-route-filter="vanilla"><span>1</span><strong>Premiers gardiens</strong><small>Minecraft & rencontres spéciales</small></button>
+    <button type="button" data-route-filter="twilight"><span>2</span><strong>Twilight Forest</strong><small>La route des trophées</small></button>
+    <button type="button" data-route-filter="expeditions"><span>3</span><strong>Expéditions</strong><small>Mowzie, Aquamirae et Stalwart</small></button>
+    <button type="button" data-route-filter="cataclysm"><span>4</span><strong>Cataclysm</strong><small>Les rencontres extrêmes</small></button>
+    <button type="button" data-route-filter="endgame"><span>5</span><strong>Endgame</strong><small>Wither, Dragon et miracles</small></button>
+    <button type="button" data-route-filter="vaelorn"><span>6</span><strong>Vaelorn</strong><small>Final protégé par spoilers</small></button>
+  </div>
+</section>
+
+<section class="boss-codex-controls">
+  <label class="boss-search">
+    <span>⌕</span>
+    <input id="boss-search-input" type="search" placeholder="Rechercher un boss, un mod ou un lieu…" autocomplete="off">
+  </label>
+  <div class="boss-filter-row" role="group" aria-label="Filtres du Codex">
+    <button class="boss-filter active" type="button" data-boss-filter="all">Tous</button>
+    <button class="boss-filter" type="button" data-boss-filter="twilight">Twilight</button>
+    <button class="boss-filter" type="button" data-boss-filter="mowzie">Mowzie</button>
+    <button class="boss-filter" type="button" data-boss-filter="cataclysm">Cataclysm</button>
+    <button class="boss-filter" type="button" data-boss-filter="aquamirae">Aquamirae</button>
+    <button class="boss-filter" type="button" data-boss-filter="stalwart">Stalwart</button>
+    <button class="boss-filter" type="button" data-boss-filter="endgame">Endgame</button>
+  </div>
+  <div class="boss-view-summary">
+    <strong id="boss-visible-count">33</strong>
+    <span>fiches affichées</span>
+  </div>
+</section>
+
+<section class="boss-codex-grid" id="boss-codex-grid" aria-live="polite"></section>
+
+<section class="boss-empty-state" id="boss-empty-state" hidden>
+  <strong>Aucune rencontre trouvée.</strong>
+  <p>Modifie la recherche ou choisis un autre filtre.</p>
+</section>
+
+<div class="boss-drawer-backdrop" id="boss-drawer-backdrop" hidden></div>
+<aside class="boss-drawer" id="boss-drawer" aria-hidden="true" aria-labelledby="boss-drawer-title">
+  <button class="boss-drawer-close" id="boss-drawer-close" type="button" aria-label="Fermer">×</button>
+  <div id="boss-drawer-content"></div>
+  <div class="boss-drawer-navigation">
+    <button id="boss-previous" type="button">← Boss précédent</button>
+    <button id="boss-next" type="button">Boss suivant →</button>
+  </div>
+</aside>
+
+<div class="adventure-toast" id="boss-codex-toast" role="status" aria-live="polite"></div>
 </main>
-<footer><div class="footer-note"><span>ASCENSION: The Last Miracle</span><span>Minecraft 1.20.1 • Forge 47.4.0 • Java 17</span><span>Contenu extrait de l’archive finale v1.0.0</span></div></footer>
+
+<footer><div class="footer-note"><span>ASCENSION: The Last Miracle</span><span>Codex des Boss — V4.3 Alpha</span><span>Statuts connectés à Mon aventure</span></div></footer>
 <script src="assets/site.js"></script>
+<script src="assets/boss-codex.js"></script>
 </body></html>
