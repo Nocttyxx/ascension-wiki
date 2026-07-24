@@ -430,6 +430,28 @@ function normalize(value) {
     .toLowerCase();
 }
 
+function routeForBoss(boss) {
+  if (boss.id === 'vaelorn') return 'citadel';
+  if (boss.id === 'minecraft-warden') return 'deep-dark';
+  if (boss.category === 'twilight') return 'twilight';
+  if (boss.category === 'aquamirae' || boss.id === 'minecraft-elder_guardian') return 'frozen';
+  if (
+    boss.id.includes('netherite_monstrosity')
+    || boss.id.includes('ignis')
+    || boss.id.includes('cerberus')
+    || boss.id.includes('incomplete_wither')
+    || boss.id.includes('awful_ghast')
+    || boss.id.includes('nether_keeper')
+  ) return 'nether';
+  if (
+    boss.id === 'minecraft-ender_dragon'
+    || boss.id.includes('ender_guardian')
+    || boss.id.includes('harbinger')
+    || boss.id.includes('shelterer')
+  ) return 'end';
+  return 'overworld';
+}
+
 function tierLabel(tier) {
   return {
     1:'Préparation',
@@ -735,6 +757,7 @@ function detailMarkup(boss) {
       <a class="button" href="${escapeHtml(boss.quest)}">Voir les quêtes</a>
       ${boss.bestiary ? `<a class="button secondary" href="${escapeHtml(boss.bestiary)}">Ouvrir le bestiaire</a>` : ''}
       <a class="button secondary" href="arsenal.html?boss=${escapeHtml(boss.id)}">Préparer l’équipement</a>
+      <a class="button secondary" href="dimensions.html#${escapeHtml(routeForBoss(boss))}">Voir l’itinéraire</a>
       <button class="button secondary" id="boss-copy-plan" type="button">Copier le plan</button>
     </div>
   `;
