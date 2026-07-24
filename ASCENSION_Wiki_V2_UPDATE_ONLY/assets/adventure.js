@@ -106,8 +106,26 @@ function mergeMinecraftState(imported){
 
 function sanitize(raw){
   if (!raw || typeof raw !== 'object') return {state:defaults(),migrated:false};
-  if (!raw.version || raw.version === 1 || (Array.isArray(raw.completed) && !raw.personal)) return migrateV1(raw);
-  if (raw.schema === 'ascension-minecraft-progress' || raw.player || raw.team) return {state:fromMinecraft(raw),migrated:false};
+
+  // Le schéma Minecraft doit être reconnu AVANT la migration V4.0.
+  // Les exports KubeJS utilisent eux aussi `version: 1`.
+  if (
+    raw.schema === 'ascension-minecraft-progress'
+    || raw.source === 'minecraft-kubejs'
+    || raw.player
+    || raw.team
+  ) {
+    return {state:fromMinecraft(raw),migrated:false};
+  }
+
+  if (
+    !raw.version
+    || raw.version === 1
+    || (Array.isArray(raw.completed) && !raw.personal)
+  ) {
+    return migrateV1(raw);
+  }
+
   const state = defaults();
   state.profile.playerName = String(raw.profile?.playerName || '').slice(0,40);
   state.profile.className = validClasses.has(raw.profile?.className) ? raw.profile.className : '';
