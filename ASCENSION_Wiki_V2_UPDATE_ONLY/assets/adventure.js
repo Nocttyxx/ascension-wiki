@@ -207,7 +207,7 @@ function titleFor(percent,scope){
   return percent===0?'La compagnie se rassemble':percent<30?'Les premières alliances':percent<60?'Le registre se remplit':percent<100?'Aux portes de Vaelorn':'Destin accompli';
 }
 const objectives=[
- {scope:'personal',special:'class',title:'Choisir une classe',detail:'Définis ton rôle personnel.',target:'panel-personal'},
+ {scope:'personal',special:'class',title:'Choisir une classe',detail:'Compare les quatre voies et leurs builds.',target:'panel-personal'},
  ...personalInputs.map(i=>({scope:'personal',id:i.dataset.goal,title:i.closest('label').querySelector('strong').textContent,detail:i.closest('label').querySelector('small').textContent,target:'panel-personal'})),
  ...companyInputs.map(i=>({scope:'company',id:i.dataset.goal,title:i.closest('label').querySelector('strong').textContent,detail:i.closest('label').querySelector('small').textContent,target:'panel-company'})),
  {scope:'company',special:'ending',title:'Choisir le destin du ciel',detail:'Enregistre la fin commune après Vaelorn.',target:'panel-company'}

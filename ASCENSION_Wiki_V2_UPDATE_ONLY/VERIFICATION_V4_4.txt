@@ -1,0 +1,16 @@
+ASCENSION Wiki V4.4 — Vérification
+===================================
+
+Classes documentées : 4/4
+Builds disponibles : 12
+Étapes de progression : 12
+Icônes locales : 4/4
+Comparateur de classes : OK
+Compositeur de compagnie : OK
+Favoris persistants : OK
+Copie du plan : OK
+Connexion à Mon aventure : OK
+Syntaxe JavaScript : OK
+Liens locaux : OK
+
+OK : 19 HTML et 1 CSS vérifiés, aucun lien local manquant.
