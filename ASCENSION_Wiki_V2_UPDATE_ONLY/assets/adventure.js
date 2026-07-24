@@ -24,6 +24,8 @@ const panes = [...root.querySelectorAll('[data-pane]')];
 const recoveryPanel = document.getElementById('legacy-recovery');
 const legacyImportInput = document.getElementById('legacy-import-adventure');
 const legacyRecoveryDismiss = document.getElementById('legacy-recovery-dismiss');
+const minecraftImportInput = document.getElementById('minecraft-import-adventure');
+const minecraftImportSummary = document.getElementById('minecraft-import-summary');
 
 const personalIds = new Set(personalInputs.map(i => i.dataset.goal));
 const companyIds = new Set(companyInputs.map(i => i.dataset.goal));
@@ -79,6 +81,27 @@ function fromMinecraft(data){
   state.company.ending = validEndings.has(team.ending) ? team.ending : '';
   state.meta = {updatedAt:now(),source:'minecraft-import'};
   return state;
+}
+
+function mergeMinecraftState(imported){
+  if(imported.profile.playerName) state.profile.playerName=imported.profile.playerName;
+  if(imported.profile.className) state.profile.className=imported.profile.className;
+
+  state.personal.completed=[
+    ...new Set([...state.personal.completed,...imported.personal.completed])
+  ];
+
+  if(imported.company.name) state.company.name=imported.company.name;
+  if(imported.company.teamId) state.company.teamId=imported.company.teamId;
+
+  state.company.completed=[
+    ...new Set([...state.company.completed,...imported.company.completed])
+  ];
+
+  if(imported.company.ending) state.company.ending=imported.company.ending;
+
+  state.meta.updatedAt=now();
+  state.meta.source='minecraft-merge';
 }
 
 function sanitize(raw){
@@ -201,7 +224,20 @@ async function importFile(file){
     const raw=JSON.parse(await file.text());
     const result=sanitize(raw);
 
-    if(raw.version===2 && raw.personal && !raw.company){
+    const isMinecraft=raw.schema==='ascension-minecraft-progress'
+      || raw.source==='minecraft-kubejs';
+
+    if(isMinecraft){
+      mergeMinecraftState(result.state);
+
+      if(minecraftImportSummary){
+        const personalCount=result.state.personal.completed.length;
+        const companyCount=result.state.company.completed.length;
+        minecraftImportSummary.textContent=
+          personalCount+' objectif(s) personnel(s) et '
+          +companyCount+' objectif(s) collectif(s) détectés puis fusionnés.';
+      }
+    } else if(raw.version===2 && raw.personal && !raw.company){
       state.profile=result.state.profile;
       state.personal=result.state.personal;
     } else if(raw.version===2 && raw.company && !raw.personal && !raw.profile){
@@ -211,9 +247,21 @@ async function importFile(file){
     }
 
     if (recoveryPanel) recoveryPanel.hidden=true;
-    persist(raw.version===1 ? 'Sauvegarde V4.0 récupérée.' : 'Progression importée.');
+    persist(
+      isMinecraft
+        ? 'Progression Minecraft fusionnée.'
+        : raw.version===1
+          ? 'Sauvegarde V4.0 récupérée.'
+          : 'Progression importée.'
+    );
     apply();
-    say(raw.version===1 ? 'Sauvegarde V4.0 répartie avec succès.' : 'Import réussi.');
+    say(
+      isMinecraft
+        ? 'Progression Minecraft ajoutée sans effacer les cases manuelles.'
+        : raw.version===1
+          ? 'Sauvegarde V4.0 répartie avec succès.'
+          : 'Import réussi.'
+    );
   }catch(e){
     console.error(e);
     say('Ce fichier de progression est invalide.');
@@ -228,6 +276,10 @@ document.getElementById('next-objective-button').addEventListener('click',()=>ac
 document.getElementById('export-all').addEventListener('click',()=>download('all')); document.getElementById('export-personal').addEventListener('click',()=>download('personal')); document.getElementById('export-company').addEventListener('click',()=>download('company'));
 document.getElementById('import-adventure').addEventListener('change',e=>{importFile(e.target.files?.[0]);e.target.value='';});
 legacyImportInput?.addEventListener('change',e=>{importFile(e.target.files?.[0]);e.target.value='';});
+minecraftImportInput?.addEventListener('change',e=>{
+  importFile(e.target.files?.[0]);
+  e.target.value='';
+});
 legacyRecoveryDismiss?.addEventListener('click',()=>{recoveryPanel.dataset.dismissed='true';recoveryPanel.hidden=true;say('Nouvelle progression prête.');});
 document.getElementById('reset-adventure').addEventListener('click',()=>{if(!confirm('Effacer les progressions personnelle et collective de ce navigateur ?'))return;state=defaults();persist('Progression réinitialisée.');apply();say('Progression réinitialisée.');});
 migrationNote.querySelector('button')?.addEventListener('click',()=>migrationNote.hidden=true);

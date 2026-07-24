@@ -7,7 +7,7 @@
 <link rel="icon" href="favicon.ico"><link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="adventure-page adventure-hybrid-page">
-<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v4.1.1 Interface Fix</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
+<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — v4.2 Minecraft Sync</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="bosses.html">Boss</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
 
 <main data-adventure-root>
 <section class="adventure-hero hybrid-hero">
@@ -381,13 +381,38 @@
 </div></section>
 </div>
 
+<section class="minecraft-sync-panel" id="minecraft-sync">
+  <div class="minecraft-sync-copy">
+    <p class="page-kicker">V4.2 — Connexion Minecraft</p>
+    <h2>Importer la progression détectée en jeu</h2>
+    <p>Le fichier Minecraft ajoute les étapes détectées à ta sauvegarde actuelle. Les cases manuelles, comme le micro ou la carte Xaero, ne sont jamais effacées.</p>
+
+    <div class="minecraft-sync-steps">
+      <div><span>1</span><p>Dans Minecraft, exécute <code>/ascensionwikiexport</code>.</p></div>
+      <div><span>2</span><p>Ouvre le dossier <code>kubejs</code> du profil ou du serveur.</p></div>
+      <div><span>3</span><p>Sélectionne le fichier <code>ascension_wiki_&lt;joueur&gt;.json</code>.</p></div>
+    </div>
+  </div>
+
+  <div class="minecraft-sync-action">
+    <div class="minecraft-sync-emblem">⛓</div>
+    <strong>Fichier Minecraft</strong>
+    <small>Schéma ASCENSION sécurisé</small>
+    <label class="button minecraft-import-button">
+      Importer depuis Minecraft
+      <input id="minecraft-import-adventure" type="file" accept="application/json,.json">
+    </label>
+    <p id="minecraft-import-summary">Aucun fichier Minecraft importé pendant cette session.</p>
+  </div>
+</section>
+
 <section class="adventure-tools hybrid-tools">
-<div><p class="page-kicker">Sauvegarde et synchronisation</p><h2>Une structure prête pour Minecraft</h2><p>L’import accepte les exports V4.0, V4.1 et le futur schéma KubeJS. La synchronisation automatique sera ajoutée après validation de cette séparation.</p></div>
+<div><p class="page-kicker">Sauvegarde du wiki</p><h2>Exporter ou restaurer le tableau de bord</h2><p>Ces boutons concernent la sauvegarde du navigateur. Ils restent utilisables indépendamment de Minecraft.</p></div>
 <div class="adventure-tool-buttons">
 <button class="button secondary" id="export-all" type="button">Exporter tout</button>
 <button class="button secondary" id="export-personal" type="button">Exporter joueur</button>
 <button class="button secondary" id="export-company" type="button">Exporter compagnie</button>
-<label class="button secondary import-button">Importer<input id="import-adventure" type="file" accept="application/json,.json"></label>
+<label class="button secondary import-button">Importer une sauvegarde du wiki<input id="import-adventure" type="file" accept="application/json,.json"></label>
 <button class="button danger-button" id="reset-adventure" type="button">Réinitialiser</button>
 </div>
 </section>
