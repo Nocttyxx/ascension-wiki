@@ -1,0 +1,19 @@
+ASCENSION Wiki V4.7 — Vérification
+===================================
+
+Quêtes conservées : 72/72
+Chapitres : 10/10
+Objectifs explicitement synchronisés : 20
+Portée personnelle/compagnie : OK
+Progression des chapitres : OK
+Notes de quête : OK
+Notes de chapitre : OK
+Favoris : OK
+Choix final et épilogues : OK
+Protection des spoilers : OK
+Export/import du journal : OK
+Liens contextuels : OK
+Syntaxe JavaScript : OK
+Liens locaux : OK
+
+OK : 21 HTML et 1 CSS vérifiés, aucun lien local manquant.
