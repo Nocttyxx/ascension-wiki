@@ -1,0 +1,19 @@
+ASCENSION Wiki V4.3.2 — Vérification
+======================================
+
+Fiches enrichies : 33/33
+Attaques documentées : 99
+Phases documentées : 70
+Checklists persistantes : 33/33
+Onglets de stratégie : 4
+Équipement conseillé : 33/33
+Consommables : 33/33
+Rôles coop : 33/33
+Erreurs à éviter : 33/33
+Copie du plan de combat : OK
+Connexion à Mon aventure : conservée
+Portraits vanilla V4.3.1 : conservés
+Syntaxe JavaScript : OK
+Liens locaux : OK
+
+OK : 19 HTML et 1 CSS vérifiés, aucun lien local manquant.
