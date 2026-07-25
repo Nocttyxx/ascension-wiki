@@ -1,0 +1,33 @@
+ASCENSION V4.9.1 — Vérification Atlas
+=====================================
+Date : 25 juillet 2026
+
+VERIFICATION COMPLETE: OK
+48 structures
+43 HTML IDs
+42 JS selector IDs checked
+JavaScript syntax: OK
+CSS structure: OK
+Local references: OK
+Python installer test: OK
+
+Fonctions livrées
+-----------------
+- Catalogue interactif : OK
+- Recherche globale : OK (contrôle statique et syntaxique)
+- Filtres dimension / progression / type / danger : OK
+- Filtre boss / favorites / non explorées : OK
+- Index inversé du butin : OK
+- Fiches détaillées : OK
+- Favoris et suivi localStorage : OK
+- Export / import JSON : OK
+- Checklist d'expédition : OK
+- Journal d'exploration : OK
+- Installateur Windows avec sauvegarde : OK (logique vérifiée)
+- Installateur Python : test fonctionnel OK
+
+Remarque
+--------
+Le rendu graphique a été validé par structure HTML/CSS/JS et contrôles de syntaxe.
+Le navigateur headless du conteneur n'a pas produit de capture, sans incidence sur
+les fichiers livrés. Un test visuel local reste prévu en ouvrant atlas.html après installation.
