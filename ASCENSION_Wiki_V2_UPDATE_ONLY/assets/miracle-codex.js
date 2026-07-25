@@ -3,7 +3,7 @@
 const DATA=window.ASCENSION_MIRACLES||[], KEY="ascension.miracles.v1";
 const state=Object.assign({obtained:[],favorites:[],selected:null,checks:{},notes:{},filters:{q:"",type:"all",stage:"all",class:"all",onlyMissing:false}},JSON.parse(localStorage.getItem(KEY)||"{}"));
 const $=s=>document.querySelector(s), save=()=>localStorage.setItem(KEY,JSON.stringify(state));
-const OFFICIAL_PORTRAITS=new Set(["agony","antitheus","enderblaster","moonless","napoleon","orbit","ruine","satsujin","solar","torment"]);
+const OFFICIAL_PORTRAITS=new Set(["agony","antitheus","blackstar","clawed-gauntlet","enderblaster","evil-odachi","hollow-longsword","moonless","napoleon","nova","orbit","regierung","ruine","satsujin","solar","torment"]);
 const artPath=id=>`assets/miracle_icons/${id}.${OFFICIAL_PORTRAITS.has(id)?"png":"svg"}`;
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function card(m){
