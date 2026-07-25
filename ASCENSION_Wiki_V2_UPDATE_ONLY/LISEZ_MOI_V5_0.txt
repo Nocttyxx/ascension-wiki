@@ -1,0 +1,65 @@
+ASCENSION: THE LAST MIRACLE
+V5.0 — LA CITADELLE DES MIRACLES
+=================================
+
+OBJECTIF
+--------
+Cette mise a jour refait l'interface du wiki sans remplacer son contenu ni ses fonctions.
+Elle ajoute une couche CSS/JavaScript par-dessus les pages existantes.
+
+CONSERVE SANS MODIFICATION
+-------------------------
+- quetes, boss, Miracles, competences, sorts, bestiaire et Atlas ;
+- identifiants HTML utilises par les scripts ;
+- favoris, notes, checklists et cases cochees ;
+- toutes les anciennes cles localStorage ;
+- import et export JSON ;
+- synchronisation personnelle et compagnie.
+
+NOUVELLE INTERFACE
+------------------
+- barre laterale organisee : Progression, Combat, Exploration, Compagnie & outils ;
+- tableau de bord sur la page d'accueil ;
+- en-tete compact et fil d'Ariane ;
+- recherche globale avec Ctrl + K ou la touche / ;
+- mode confortable ou compact ;
+- menu retractable sur ordinateur ;
+- navigation adaptee aux telephones ;
+- harmonisation des cartes, filtres, formulaires, tableaux et panneaux ;
+- prise en charge speciale de l'Atlas ;
+- respect du reglage systeme de reduction des animations.
+
+INSTALLATION
+------------
+1. Extrais completement le fichier ZIP.
+2. Ouvre APERCU_AUTONOME_CITADELLE_V5_0.html pour voir le nouveau style.
+3. Double-clique sur INSTALLER_CITADELLE_V5_0.bat.
+4. Selectionne le dossier ACTUEL de ton wiki qui contient directement :
+   - index.html
+   - le dossier assets
+5. Attends le message de reussite.
+6. Ouvre index.html puis teste :
+   - le menu lateral ;
+   - Ctrl + K ;
+   - le mode compact ;
+   - quests.html ;
+   - atlas.html.
+
+L'installateur cree automatiquement un dossier :
+_backup_avant_citadelle_v5_0_DATE_HEURE
+
+MISE EN LIGNE SUR GITHUB
+------------------------
+Apres validation locale, envoie sur GitHub :
+- les pages .html modifiees ;
+- assets/citadel-v5.css ;
+- assets/citadel-v5.js.
+
+N'envoie pas le dossier _backup_avant_citadelle_v5_0_...
+Recharge ensuite le site avec Ctrl + F5.
+
+RETRAIT DE LA V5.0
+------------------
+Double-clique sur DESINSTALLER_CITADELLE_V5_0.bat puis selectionne le dossier du wiki.
+Le desinstallateur retire uniquement les deux balises V5.0 et les deux nouveaux fichiers.
+Les donnees et fonctions du wiki ne sont pas supprimees.

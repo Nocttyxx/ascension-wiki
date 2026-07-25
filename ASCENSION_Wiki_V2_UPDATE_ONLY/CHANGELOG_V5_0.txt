@@ -1,0 +1,28 @@
+ASCENSION Wiki V5.0 — La Citadelle des Miracles
+================================================
+
+AJOUTE
+- Navigation laterale classee par univers.
+- Barre superieure contextuelle avec fil d'Ariane.
+- Palette de recherche globale Ctrl + K et raccourci /.
+- Tableau de bord sur la page d'accueil.
+- Mode de lecture confortable ou compact.
+- Menu lateral retractable avec preference sauvegardee.
+- Navigation mobile avec panneau coulissant.
+- Nouvelle direction dark fantasy : noir bleute, or ancien, bleu arcanique et rouge profond.
+- Styles unifies pour cartes, panneaux, tableaux, formulaires, filtres et boutons.
+- Integration dediee a l'Atlas et a ses panneaux lateraux.
+- Desinstallateur non destructif.
+
+PRESERVE
+- Tous les fichiers de donnees existants.
+- Tous les scripts fonctionnels existants.
+- Toutes les cles de sauvegarde anterieures.
+- Les importations et exportations JSON.
+- La progression personnelle et collective.
+
+NOUVELLES CLES LOCALES
+- ascension_v5_sidebar_collapsed
+- ascension_v5_density
+
+Aucune ancienne cle localStorage n'est lue, renommee ou effacee par la V5.0.

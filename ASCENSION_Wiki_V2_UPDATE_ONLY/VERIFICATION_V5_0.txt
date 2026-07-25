@@ -1,0 +1,48 @@
+ASCENSION Wiki V5.0 — Rapport de verification
+==============================================
+
+Resultat : 34/34 controles reussis
+Echecs : 0
+
+[OK] Fichier present : INSTALLER_CITADELLE_V5_0.bat
+[OK] Fichier present : install_citadelle_v5_0.ps1
+[OK] Fichier present : DESINSTALLER_CITADELLE_V5_0.bat
+[OK] Fichier present : uninstall_citadelle_v5_0.ps1
+[OK] Fichier present : APERCU_AUTONOME_CITADELLE_V5_0.html
+[OK] Fichier present : LISEZ_MOI_V5_0.txt
+[OK] Fichier present : CHANGELOG_V5_0.txt
+[OK] Fichier present : assets/citadel-v5.css
+[OK] Fichier present : assets/citadel-v5.js
+[OK] CSS suffisamment complet — 18818 octets
+[OK] JavaScript suffisamment complet — 16899 octets
+[OK] Syntaxe JavaScript valide
+[OK] Apercu HTML analysable
+[OK] Apercu charge le CSS V5
+[OK] Apercu charge le JavaScript V5
+[OK] Injection unique : index.html
+[OK] Installation idempotente : index.html
+[OK] Injection unique : atlas.html
+[OK] Installation idempotente : atlas.html
+[OK] Pages de test modifiees — 2 page(s)
+[OK] Desktop : barre laterale injectee
+[OK] Desktop : barre superieure injectee
+[OK] Desktop : tableau de bord injecte
+[OK] Desktop : 18 destinations de navigation
+[OK] Desktop : recherche Ctrl+K fonctionnelle
+[OK] Desktop : aucune erreur JavaScript
+[OK] Mobile : menu coulissant ouvrable
+[OK] Mobile : menu refermable
+[OK] Mobile : recherche ouvrable
+[OK] Mobile : aucune erreur JavaScript
+[OK] Atlas : 48 fiches toujours generees
+[OK] Atlas : un panneau principal visible
+[OK] Atlas : navigation V5 injectee
+[OK] Atlas : aucune erreur JavaScript
+
+Garanties de la mise a jour
+---------------------------
+- Deux nouveaux fichiers seulement sont charges par les pages : citadel-v5.css et citadel-v5.js.
+- Les pages existantes ne recoivent que deux balises de chargement.
+- Aucune ancienne cle localStorage n est supprimee ou renommee.
+- Le paquet contient un desinstallateur non destructif.
+- Une sauvegarde des pages est creee avant installation.
