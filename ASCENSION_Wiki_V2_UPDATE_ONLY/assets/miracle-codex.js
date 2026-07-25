@@ -39,7 +39,7 @@ function open(id){
  <section><h3>Techniques et sorts</h3>${m.skills.map(s=>`<article class="miracle-skill"><h4>${esc(s[0])}</h4><p>${esc(s[1])}</p></article>`).join("")}</section>
  <section class="miracle-columns"><div><h3>Forces</h3><ul>${m.strengths.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div><h3>Faiblesses</h3><ul>${m.weaknesses.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></section>
  <section><h3>Notes personnelles</h3><textarea id="miracle-note" placeholder="Combo, touche, objectif, conseil de ton groupe…">${esc(state.notes[id]||"")}</textarea></section>
- <div class="miracle-detail-actions"><button id="miracle-got">${state.obtained.includes(id)?"Retirer des obtenus":"Marquer comme obtenu"}</button><a href="arsenal.html?miracle=${id}">Préparer dans l’Arsenal</a><a href="classes.html">Comparer les classes</a></div>`;
+ <div class="miracle-detail-actions"><button id="miracle-got">${state.obtained.includes(id)?"Retirer des obtenus":"Marquer comme obtenu"}</button><a href="skills.html?miracle=${id}">Voir ses compétences</a><a href="arsenal.html?miracle=${id}">Préparer dans l’Arsenal</a><a href="classes.html">Comparer les classes</a></div>`;
  $("#miracle-drawer").classList.add("open");
  $("#miracle-close").onclick=()=>$("#miracle-drawer").classList.remove("open");
  $("#miracle-got").onclick=()=>{toggle("obtained",id);open(id);render()};
