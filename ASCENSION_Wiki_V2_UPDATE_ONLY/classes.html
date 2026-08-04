@@ -1,96 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Guides de classes, builds et compositions coopératives d’ASCENSION: The Last Miracle">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Guides de classes, builds et compositions coopératives d’ASCENSION: The Last Miracle" name="description"/>
 <title>Classes et builds — ASCENSION: The Last Miracle</title>
-<link rel="icon" href="favicon.ico"><link rel="stylesheet" href="assets/style.css">
-</head>
+<link href="favicon.ico" rel="icon"/><link href="assets/style.css" rel="stylesheet"/>
+
+<link data-ascension-v6="style" href="assets/citadel-v6.css" rel="stylesheet"/></head>
 <body class="class-guide-page">
-<header><div class="header-inner"><div class="brand-wrap"><img class="brand-mark" src="assets/ascension_logo_final.png" alt="Logo ASCENSION"><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — V4.4 Classes & Builds</span></div></div><nav><a href="index.html">Accueil</a><a class="nav-adventure" href="adventure.html">Mon aventure</a><a href="debuter.html">Bien débuter</a><a href="progression.html">Campagne</a><a href="quests.html">72 quêtes</a><a href="classes.html">Classes</a><a href="arsenal.html">Arsenal</a><a href="dimensions.html">Dimensions</a><a href="atlas.html">Atlas</a><a href="bosses.html">Boss</a><a href="miracles.html">Miracles</a><a href="skills.html">Compétences</a><a href="bestiary.html">Bestiaire</a><a href="systems.html">Systèmes</a><a href="lore.html">Lore</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a><a href="spoilers.html">Spoilers</a></nav></div></header>
-
-<main data-class-guides>
+<header><div class="header-inner"><div class="brand-wrap"><img alt="Logo ASCENSION" class="brand-mark" src="assets/ascension_logo_final.png"/><div><a class="brand" href="index.html">ASCENSION Wiki</a><span class="brand-sub">The Last Miracle — V1.0.0 officielle</span></div></div><nav><a href="index.html">Accueil</a><a href="adventure.html">Mon aventure</a><a href="quests.html">180 quêtes</a><a href="progression.html">Campagne</a><a class="active" href="classes.html">Classes</a><a href="miracles.html">Miracles</a><a href="bosses.html">Boss</a><a href="atlas.html">Atlas</a><a href="chronicle.html">Chronique</a><a href="titles.html">Titres</a><a href="encounters.html">Rencontres</a><a href="commands.html">Commandes</a><a href="technical.html">Aide</a></nav></div></header>
+<main data-class-guides="">
 <section class="class-guide-hero">
-  <div>
-    <p class="eyebrow">V4.4 — Les quatre voies survivantes</p>
-    <h1>Classes et builds</h1>
-    <p class="lead">Choisis une voie, compare ses forces et prépare un build cohérent pour le début, le milieu et la fin de la campagne.</p>
-    <div class="badges"><span>4 classes</span><span>12 builds</span><span>Solo & coop</span><span>Connexion à Mon aventure</span></div>
-  </div>
-  <div class="class-hero-selection">
-    <p>Classe enregistrée</p>
-    <img id="selected-class-icon" src="assets/items/sceau_destin.png" alt="">
-    <strong id="selected-class-name">Aucune classe</strong>
-    <span id="selected-build-name">Aucun build favori</span>
-  </div>
-</section>
-
-<div class="class-permanent-warning">
-  <div>◆</div>
-  <p><strong>Le choix de classe est permanent en jeu.</strong> Le wiki peut enregistrer et comparer tes choix, mais seule la commande <code>/ascensionclass</code> applique réellement la classe dans Minecraft.</p>
+<div>
+<p class="eyebrow">V4.4 — Les quatre voies survivantes</p>
+<h1>Classes et builds</h1>
+<p class="lead">Choisis une voie, compare ses forces et prépare un build cohérent pour le début, le milieu et la fin de la campagne.</p>
+<div class="badges"><span>4 classes</span><span>12 builds</span><span>Solo &amp; coop</span><span>Connexion à Mon aventure</span></div>
 </div>
-
+<div class="class-hero-selection">
+<p>Classe enregistrée</p>
+<img alt="" id="selected-class-icon" src="assets/items/sceau_destin.png"/>
+<strong id="selected-class-name">Aucune classe</strong>
+<span id="selected-build-name">Aucun build favori</span>
+</div>
+</section>
+<div class="class-permanent-warning">
+<div>◆</div>
+<p><strong>Le choix de classe est permanent en jeu.</strong> Le wiki peut enregistrer et comparer tes choix, mais seule la commande <code>/ascensionclass</code> applique réellement la classe dans Minecraft.</p>
+</div>
 <section class="class-selector-section">
-  <div class="class-section-heading">
-    <div><p class="page-kicker">Choisir une voie</p><h2>Quel rôle veux-tu tenir ?</h2></div>
-    <button class="button secondary" id="compare-classes-button" type="button">Comparer les quatre classes</button>
-  </div>
-  <div class="class-selector-grid" id="class-selector-grid"></div>
+<div class="class-section-heading">
+<div><p class="page-kicker">Choisir une voie</p><h2>Quel rôle veux-tu tenir ?</h2></div>
+<button class="button secondary" id="compare-classes-button" type="button">Comparer les quatre classes</button>
+</div>
+<div class="class-selector-grid" id="class-selector-grid"></div>
 </section>
-
 <section class="class-detail-shell" id="class-detail-shell">
-  <div class="class-detail-header" id="class-detail-header"></div>
-  <div class="class-detail-tabs" role="tablist" aria-label="Sections du guide de classe">
-    <button class="active" type="button" data-class-tab="overview">Aperçu</button>
-    <button type="button" data-class-tab="progression">Progression</button>
-    <button type="button" data-class-tab="builds">Builds</button>
-    <button type="button" data-class-tab="coop">Coop & boss</button>
-  </div>
-  <div class="class-detail-panel" data-class-panel="overview" id="class-overview-panel"></div>
-  <div class="class-detail-panel" data-class-panel="progression" id="class-progression-panel" hidden></div>
-  <div class="class-detail-panel" data-class-panel="builds" id="class-builds-panel" hidden></div>
-  <div class="class-detail-panel" data-class-panel="coop" id="class-coop-panel" hidden></div>
+<div class="class-detail-header" id="class-detail-header"></div>
+<div aria-label="Sections du guide de classe" class="class-detail-tabs" role="tablist">
+<button class="active" data-class-tab="overview" type="button">Aperçu</button>
+<button data-class-tab="progression" type="button">Progression</button>
+<button data-class-tab="builds" type="button">Builds</button>
+<button data-class-tab="coop" type="button">Coop &amp; boss</button>
+</div>
+<div class="class-detail-panel" data-class-panel="overview" id="class-overview-panel"></div>
+<div class="class-detail-panel" data-class-panel="progression" hidden="" id="class-progression-panel"></div>
+<div class="class-detail-panel" data-class-panel="builds" hidden="" id="class-builds-panel"></div>
+<div class="class-detail-panel" data-class-panel="coop" hidden="" id="class-coop-panel"></div>
 </section>
-
 <section class="team-composer">
-  <div class="class-section-heading">
-    <div><p class="page-kicker">Composition de compagnie</p><h2>Assembler une équipe</h2></div>
-    <span>Choisis de 2 à 4 rôles</span>
-  </div>
-  <div class="team-composer-grid">
-    <div class="team-slots" id="team-slots"></div>
-    <article class="team-analysis" id="team-analysis">
-      <p class="page-kicker">Analyse</p>
-      <h3>Sélectionne au moins deux classes</h3>
-      <p>Le wiki affichera les forces, les faiblesses et la répartition recommandée.</p>
-    </article>
-  </div>
+<div class="class-section-heading">
+<div><p class="page-kicker">Composition de compagnie</p><h2>Assembler une équipe</h2></div>
+<span>Choisis de 2 à 4 rôles</span>
+</div>
+<div class="team-composer-grid">
+<div class="team-slots" id="team-slots"></div>
+<article class="team-analysis" id="team-analysis">
+<p class="page-kicker">Analyse</p>
+<h3>Sélectionne au moins deux classes</h3>
+<p>Le wiki affichera les forces, les faiblesses et la répartition recommandée.</p>
+</article>
+</div>
 </section>
-
 <section class="class-quick-tools">
-  <div>
-    <p class="page-kicker">Plan personnel</p>
-    <h2>Conserver ou partager ton build</h2>
-    <p>Le build favori reste enregistré dans ce navigateur. Tu peux aussi copier son plan pour tes amis.</p>
-  </div>
-  <div>
-    <button class="button secondary" id="copy-class-plan" type="button">Copier mon plan</button>
-    <a class="button" href="adventure.html">Ouvrir Mon aventure</a>
-  </div>
+<div>
+<p class="page-kicker">Plan personnel</p>
+<h2>Conserver ou partager ton build</h2>
+<p>Le build favori reste enregistré dans ce navigateur. Tu peux aussi copier son plan pour tes amis.</p>
+</div>
+<div>
+<button class="button secondary" id="copy-class-plan" type="button">Copier mon plan</button>
+<a class="button" href="adventure.html">Ouvrir Mon aventure</a>
+</div>
 </section>
-
-<div class="class-compare-backdrop" id="class-compare-backdrop" hidden></div>
-<aside class="class-compare-drawer" id="class-compare-drawer" aria-hidden="true" aria-labelledby="class-compare-title">
-  <button class="class-compare-close" id="class-compare-close" type="button" aria-label="Fermer">×</button>
-  <p class="page-kicker">Comparaison complète</p>
-  <h2 id="class-compare-title">Les quatre voies</h2>
-  <div class="class-comparison-table" id="class-comparison-table"></div>
+<div class="class-compare-backdrop" hidden="" id="class-compare-backdrop"></div>
+<aside aria-hidden="true" aria-labelledby="class-compare-title" class="class-compare-drawer" id="class-compare-drawer">
+<button aria-label="Fermer" class="class-compare-close" id="class-compare-close" type="button">×</button>
+<p class="page-kicker">Comparaison complète</p>
+<h2 id="class-compare-title">Les quatre voies</h2>
+<div class="class-comparison-table" id="class-comparison-table"></div>
 </aside>
-
-<div class="adventure-toast" id="class-guide-toast" role="status" aria-live="polite"></div>
+<div aria-live="polite" class="adventure-toast" id="class-guide-toast" role="status"></div>
 </main>
-
-<footer><div class="footer-note"><span>ASCENSION: The Last Miracle</span><span>Classes & Builds — V4.4</span><span>Les priorités sont des recommandations, pas des bonus cachés</span></div></footer>
+<footer><div class="footer-note"><span>ASCENSION: The Last Miracle</span><span>Classes &amp; Builds — V4.4</span><span>Les priorités sont des recommandations, pas des bonus cachés</span></div></footer>
 <script src="assets/site.js"></script>
 <script src="assets/class-guides.js"></script>
-</body></html>
+
+<script data-ascension-v6="script" src="assets/citadel-v6.js"></script></body></html>

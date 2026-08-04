@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aperçu V5.0 — La Citadelle des Miracles</title>
+  <style>
+    .preview-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin:16px 0 36px;padding:26px;border:1px solid rgba(216,181,109,.14);border-radius:22px;background:linear-gradient(145deg,rgba(16,21,30,.88),rgba(9,12,18,.88))}
+    .preview-hero h2{font:700 clamp(2rem,5vw,4.6rem)/1.03 Georgia,serif;margin:0}.preview-rune{min-height:220px;display:grid;place-items:center;border-radius:18px;border:1px solid rgba(216,181,109,.15);font-size:6rem;color:#d8b56d;background:radial-gradient(circle,rgba(108,167,201,.15),transparent 55%)}
+    .preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.preview-grid article{padding:20px}.preview-filter{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.preview-filter input,.preview-filter select{padding:11px 13px;min-width:180px}.preview-filter button{padding:11px 15px;color:#17130c;background:#d8b56d;border:0}.preview-table-wrap{overflow:auto;margin-top:24px}
+    @media(max-width:900px){.preview-hero{grid-template-columns:1fr}.preview-grid{grid-template-columns:1fr}}
+  </style>
+  <link rel="stylesheet" href="assets/citadel-v5.css" data-ascension-v5="style">
+</head>
+<body data-v5-preview-home>
+<header class="site-header"><nav><a href="#">Accueil</a><a href="#">Quêtes</a><a href="#">Boss</a><a href="#">Atlas</a></nav></header>
+<main>
+  <section class="preview-hero">
+    <div><p style="color:#d8b56d;font-weight:800;letter-spacing:.16em;text-transform:uppercase">Direction visuelle</p><h2>Une encyclopédie devenue citadelle.</h2><p>Cette page montre la nouvelle hiérarchie, les panneaux tactiques, les formulaires, les cartes et les tableaux. Le contenu réel de ton wiki restera exactement le même.</p></div>
+    <div class="preview-rune" aria-hidden="true">✦</div>
+  </section>
+
+  <p style="color:#d8b56d;font-weight:800;letter-spacing:.15em;text-transform:uppercase">Accès tactiques</p>
+  <h2>Reprendre l’aventure</h2>
+  <div class="preview-grid">
+    <article><small>PROGRESSION</small><h2>Chapitre IX</h2><p>Les Six Épreuves attendent la compagnie. Reprends le journal sans chercher parmi toutes les sections.</p><a href="#">Ouvrir les quêtes →</a></article>
+    <article><small>COMBAT</small><h2>Préparer Vaelorn</h2><p>Retrouve immédiatement les boss, compétences, Miracles et recommandations de groupe.</p><a href="#">Ouvrir le Codex →</a></article>
+    <article><small>EXPLORATION</small><h2>Nouvelle expédition</h2><p>Compare le danger, les dimensions et le butin avant de quitter le refuge.</p><a href="#">Ouvrir l’Atlas →</a></article>
+  </div>
+
+  <div class="preview-filter">
+    <input type="search" placeholder="Rechercher une quête, un boss…">
+    <select><option>Toutes les catégories</option><option>Combat</option><option>Exploration</option></select>
+    <select><option>Tous les états</option><option>À faire</option><option>Terminé</option></select>
+    <button type="button">Rechercher</button>
+  </div>
+
+  <div class="preview-table-wrap">
+    <table>
+      <thead><tr><th>Objectif</th><th>Catégorie</th><th>Danger</th><th>État</th></tr></thead>
+      <tbody>
+        <tr><td>Explorer une forteresse Stalwart</td><td>Exploration</td><td>★★★★☆</td><td>À préparer</td></tr>
+        <tr><td>Maîtriser la garde du Miracle</td><td>Compétence</td><td>★★★☆☆</td><td>En cours</td></tr>
+        <tr><td>Réunir la compagnie</td><td>Progression</td><td>★★☆☆☆</td><td>Validé</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+  <script src="assets/citadel-v5.js" data-ascension-v5="script"></script>
+</body>
+</html>
+

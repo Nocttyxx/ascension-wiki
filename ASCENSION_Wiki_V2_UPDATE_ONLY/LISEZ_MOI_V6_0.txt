@@ -1,0 +1,7 @@
+ASCENSION WIKI V6.0
+
+Le dossier actif publié par GitHub Pages reste :
+ASCENSION_Wiki_V2_UPDATE_ONLY
+
+Le workflow du dépôt est déjà configuré pour ce chemin.
+Après envoi sur la branche main, vérifie l’onglet Actions puis le site public.

@@ -1,0 +1,42 @@
+﻿{
+    "version":  "5.0",
+    "installedAt":  "2026-07-25T15:15:43.9328303+02:00",
+    "target":  "C:\\Users\\FlowUP_Moll-E\\Documents\\GitHub\\ascension-wiki\\ASCENSION_Wiki_V2_UPDATE_ONLY",
+    "backup":  "C:\\Users\\FlowUP_Moll-E\\Documents\\GitHub\\ascension-wiki\\ASCENSION_Wiki_V2_UPDATE_ONLY\\_backup_avant_citadelle_v5_0_20260725_151543",
+    "modifiedPages":  [
+                          "404.html",
+                          "adventure.html",
+                          "APERCU_AUTONOME_ATLAS_V4_9_1.html",
+                          "APERCU_AUTONOME_CITADELLE_V5_0.html",
+                          "arsenal.html",
+                          "atlas.html",
+                          "bestiary.html",
+                          "bosses.html",
+                          "changelog.html",
+                          "classes.html",
+                          "commands.html",
+                          "controls.html",
+                          "coop.html",
+                          "debuter.html",
+                          "dimensions.html",
+                          "index.html",
+                          "installation.html",
+                          "lore.html",
+                          "miracles.html",
+                          "mods.html",
+                          "progression.html",
+                          "quests.html",
+                          "skills.html",
+                          "spoilers.html",
+                          "systems.html",
+                          "technical.html"
+                      ],
+    "skippedPages":  [
+
+                     ],
+    "addedAssets":  [
+                        "assets/citadel-v5.css",
+                        "assets/citadel-v5.js"
+                    ],
+    "note":  "Couche visuelle non destructive. Les donnees et cles localStorage existantes ne sont pas modifiees."
+}

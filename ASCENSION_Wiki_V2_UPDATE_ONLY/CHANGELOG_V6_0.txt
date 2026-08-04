@@ -1,0 +1,8 @@
+ASCENSION Wiki V6.0 — Release officielle
+
+- 180 quêtes extraites des fichiers FTB Quests V1.0.0.
+- Accueil aligné sur la release officielle.
+- Pages Chronique, Titres, Rencontres et V1.0.0.
+- Commandes et installation actualisées.
+- Citadelle des Miracles promue en V6.0.
+- Préparation du lien CurseForge.
